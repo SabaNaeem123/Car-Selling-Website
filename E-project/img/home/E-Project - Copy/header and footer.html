@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Breezy&nbsp;&nbsp;|&nbsp;&nbsp;Your Journey Our Passion</title>
+    <link rel="shortcut icon" href="/favicon-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="header and footer .css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+   <link rel="stylesheet" href="/header and footer .css">
+</head>
+<body>
+    <header>
+        <div class="upper">
+            <div class="visitor-counter">
+                <a href="#">
+                <i class="ri-group-fill"></i>
+                <div class="counter" id="counter">1,564,012</div>
+                <p class="counter-p">USERS CONNECTED</p>
+                </a>
+            </div>
+            <section class="home">
+                <div class="home-text">
+                    <div class="head">
+                      <p class="animated-text">
+                        <span> <a href="#">Stay informed with the latest updates and offers!</a></span>
+                        <span> <a href="#">For inquiries, call us at : +92 956320765</a></span>
+                      </p> 
+                    </div>
+                </div>
+            </section>
+            <div class="logIn-register">
+                <div class="logIn">
+                    <a href="#">
+                        <i class="fas fa-lock"></i>
+                        Log in</a> 
+                </div>
+                <div class="register">
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        Register</a>
+                </div>
+            </div>
+        </div>
+            <div class="separator"></div> 
+        <nav>
+            <div class="wrapper">
+                <div class="logo"><a href="#">
+                    <img src="logo.png" alt="">
+                    <img src="logoText.png" alt="">
+                </div>
+                <input type="radio" name="slide" id="menu-btn">
+                <input type="radio" name="slide" id="cancel-btn">
+                <ul class="nav-links">
+                    <label for="cancel-btn" class="btn cancel-btn"><i class="fas fa-times"></i></label>
+                    <li><a href="#" class="active">Home</a></li>
+                        <li>
+                            <a href="#" class="largeScreen">Blogs</a>
+                            <input type="checkbox" id="showDropdown">
+                            <label for="showDropdown" class="smallScreen">Blogs</label>
+                            <ul class="drop-menu">
+                                <li><a href="#">Blog 1</a></li>
+                                <li><a href="#">Blog 2</a></li>
+                                <li><a href="#">Blog 3</a></li>
+                                <li><a href="#">Blog 4</a></li>
+                            </ul>
+                        </li>
+                    <li>
+                        <a href="#" class="largeScreen">Categories</a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="smallScreen">Categories</label>
+                            <div class="mega-box">
+                                <div class="content">
+                                    <div class="row">
+                                        <img src="categoryImg.jpg" alt="">
+                                    </div>
+                                    <div class="row">
+                                        <header>Vehicle Types</header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Sedans</a></li>
+                                            <li><a href="#">SUVs</a></li>
+                                            <li><a href="#">Trucks</a></li>
+                                            <li><a href="#">Convertibles</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Car Brands</header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Toyota</a></li>
+                                            <li><a href="#">Ford</a></li>
+                                            <li><a href="#">Honda</a></li>
+                                            <li><a href="#">Audi</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Featured</header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Electric Vehicles</a></li>
+                                            <li><a href="#">Hybrid Vehicles</a></li>
+                                            <li><a href="#">Sports Cars</a></li>
+                                            <li><a href="#">Luxury Cars</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                </ul>
+                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+                <div class="darkLight-searchBox">
+                    <div class="dark-light">
+                        <i class="bx bx-moon moon" title="switch to dark mode"></i>
+                        <i class="bx bx-sun sun" title="switch to light mode"></i>
+                    </div>
+                    <div class="searchBox">
+                        <div class="searchToggle">
+                            <i class="bx bx-x cancel"></i>
+                            <i class="bx bx-search search"></i>
+                    </div>
+                    <div class="search-field">
+                        <input type="search" id="search" placeholder="Search..">
+                        <i class="icon" onclick="search.value=''"></i>
+                    </div>
+                </div>
+                <div class="cart" onclick="toggleCart()">
+                    <i class="ri-shopping-cart-line"></i>
+                    <p id="cart-count">0</p>
+                </div>
+                <div id="hidden">
+                    <h2>My Cart <p id="cross" onclick="closeCart()">&times;</p></h2>  
+                    <ul id="cart-items"></ul>
+                    <p id="total-amount">Your Cart is Currently empty</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- Footer Structure-->
+<footer>
+    <div class="triangle-down with-shadow"></div>
+    <div class="footer-top">
+    <div class="footer-row">
+        <div class="footer-col">
+            <img src="/logo.jpg" alt="">
+            <p >"With a rich history in the automotive industry, we're your trusted partner on the road ahead."</p>
+            <span><i class="bx bx-phone"></i>+2 123 654 7898</span>
+            <span><i class="bx bx-location-plus"></i>25/8 Shahrah-e-Faisal Road, Karachi,Pakistan</span>
+            <span><i class="bx bx-envelope"></i>info@carBreezy.com</span>
+
+        </div>
+        <div class="footer-col footer-col-12 footer123">
+            <h5>Quick Links</h5>
+            <a href="#"> <i class="bx bx-chevron-right"></i>About Us</a>
+            <a href="#"> <i class="bx bx-chevron-right"></i>Update News</a>
+            <a href="#"> <i class="bx bx-chevron-right"></i>Image Gallery</a>
+            <a href="#"> <i class="bx bx-chevron-right"></i>Terms Of Services</a>
+            <a href="#"> <i class="bx bx-chevron-right"></i>Privacy Policy</a>
+            <a href="#"> <i class="bx bx-chevron-right"></i>Our Dealers</a>
+          
+        </div>
+        <div class="footer-col footer-col-support footer123">
+            <h5>Support Center</h5>
+            <a href="#"><i class="bx bx-chevron-right"></i>FAQ's</a>
+            <a href="#"><i class="bx bx-chevron-right"></i>Affiliates</a>
+            <a href="#"><i class="bx bx-chevron-right"></i>Booking Tips</a>
+            <a href="#"><i class="bx bx-chevron-right"></i>Sell Vehicles</a>
+            <a href="#"><i class="bx bx-chevron-right"></i>Contact Us </a>
+            <a href="#"><i class="bx bx-chevron-right"></i>Sitemap</a>
+        </div>
+        <div class="footer-col footer-col-12 footer123">
+            <h5>Newsletter  </h5>
+                <p id="subscribe-text">Subscribe to Our Newsleeter To Get  Latest News And Updates.</p>
+                <form action="" id="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required="true" autofocus autocomplete="on" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Format:example@gmail.com" id="subscribe-input" style="display: block; position: relative; top: 15px;">
+                   <div ></div>
+                   <button type="submit" id="subscribe-button" >Subscribe <i class='bx bxl-telegram subscribe-i' style="position: relative; top: 2px;"></i></button> 
+                   
+                </form>
+                <div id="subscribe-result" style="color: aliceblue;">Thanks For Subscribing To Our News Letter!</div>
+                </div>
+</div>
+</div>
+<div class="footer-bottom">
+    <p> <span>&copy;</span> Copyright 2024 <span>|</span> Car Breezy <span>|</span> All Rights Reserved</p>
+    <div class="social">
+        <i class='bx bxl-facebook'></i>
+        <i class="bx bxl-twitter"></i>
+        <i class="bx bxl-instagram"></i>
+        <i class="bx bxl-linkedin"></i>
+        <i class="bx bxl-youtube"></i>
+    </div>
+</div>
+<div class="ticker">
+    <div class="ticker-content" id="tickerContent"></div>
+</div>
+   </footer>
+
+    
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="header and footer .js"></script>
+</body>
+</html>

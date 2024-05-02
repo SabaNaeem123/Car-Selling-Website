@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Breezy</title>
+    <link rel="shortcut icon" href="Screenshot__70_-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="acessories.css">
+    <style>
+        .listProduct{
+           margin-top: 26em;
+        }
+        @media screen and (max-width: 992px){
+            .listProduct{
+                margin-top: 70em;
+            }
+        }
+        @media screen and (max-width: 767px){
+            .listProduct{
+                margin-top: 62em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="upper">
+        <div class="visitor-counter">
+            <a href="#">
+            <i class="ri-group-fill"></i>
+            <div class="counter" id="counter">0</div>
+            <p class="counter-p">USERS CONNECTED</p>
+            </a>
+        </div>
+        <section class="home">
+            <div class="home-text">
+                <div class="txt">
+                  <p class="animated-text">
+                    <span> <a href="#">Stay informed with the latest updates and offers!</a></span>
+                    <span> <a href="#">For inquiries, call us at : +92 956320765</a></span>
+                  </p> 
+                </div>
+            </div>
+        </section>
+        <div class="logIn-register">
+            <div class="logIn">
+                <a href="#">
+                    <i class="fas fa-lock"></i>
+                    Log in</a> 
+            </div>
+            <div class="register">
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    Register</a>
+            </div>
+        </div>
+    </div>
+    <div id="app"></div>
+    <div id="temporatyContent">
+        <div class="title">
+            PRODUCT DETAIL
+        </div>
+        <div class="detail">
+            <div class="image">
+                <img src="pinterest1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="name">NAME</div>
+                <div class="price">$000</div>
+                <div class="buttons">
+                    <button>Check Out</button>
+                    <button class="addCart">
+                        Add To Cart
+                    </button>
+                </div>
+                <div class="description">
+                    lorem1111
+                </div>
+            </div>
+            
+        </div>
+        <div class="tatle">Similar Product</div>
+            <div class="listProduct"></div> 
+    </div>
+    
+
+    <script type="module" src="detail.js"></script>
+    <script>
+        // JavaScript code for the counter
+  var counter = document.getElementById("counter");
+  if (sessionStorage.getItem("count")){
+      count=parseInt(sessionStorage.getItem("count"));
+  }else{
+      count=0;
+  }
+  function updateCounter(){
+   count++;
+   counter.textContent=count;
+   sessionStorage.setItem("count",count);
+  }
+  updateCounter();
+
+   // JavaScript code for animated Text
+   const text=document.querySelector(".animated-text").children,
+  textLen=text.length;
+  let index=0;
+  const textInTimer=3000,
+  textOutTimer=2800;
+  
+  function animateText() {
+  for(let i=0; i<textLen; i++){
+  text[i].classList.remove("text-in","text-out");  
+  }
+  text[index].classList.add("text-in");
+  
+  setTimeout(function(){
+  text[index].classList.add("text-out");              
+  },textOutTimer)
+  
+  setTimeout(function(){
+  if(index == textLen-1){
+      index=0;
+  }
+  else{
+   index++;
+  }
+      animateText();
+  },textInTimer); 
+  }        
+  window.onload=animateText;
+  
+   </script>
+</body>
+</html>

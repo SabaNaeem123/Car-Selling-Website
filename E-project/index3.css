@@ -1,0 +1,264 @@
+:root{
+    --main-color:#08586C;
+    --text-color:#5f9293cd;
+}
+.col-1{
+  flex-wrap: wrap;
+}
+.inventory{
+    margin: -332px 840px;
+    margin-bottom: 32rem;
+}
+.bl1 .bl1:hover{
+  background-color: var(--text-color);
+}
+.productCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 7.5rem 8.5%;
+}
+.productCard i{
+    color: var(--main-color);
+}
+
+.productCard .card-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.card-container .cards{
+    border:  0.5rem solid lightgray;
+  box-shadow: 0 0 10px #d8d3d3;
+  padding: 16px 20px 30px;
+  border-radius: 10px;
+  text-align: left;
+  background-color: #fff;
+  overflow: hidden;
+}
+.card-container .cards .image{
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card-container .cards .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.9s;
+}
+.card-container .cards .image img:hover{
+    transform: scale(1.2);
+}
+.productCard h4{
+    color: var(--oxfordColor);
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: var(--font1);
+   text-align: center;
+}
+.productCard h4 i{
+    color: var(--oxfordColor);
+    font-size: 3.5rem;
+    font-weight: bolder;
+    font-family: var(--font1);
+   text-align: center;
+   padding-right: 1rem;
+}
+.productCard h2{
+    color: var(--changeColor);
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: var(--font1);
+   text-align: center;
+   padding-bottom: 1rem;
+   padding-right: 1rem;
+}
+.productCard h3{
+    font-family: var(--font1);
+    color: var(--oxfordColor);
+    font-size: 5rem;
+    font-weight: bolder;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+:root{
+    --font1: "Poppins", sans-serif;
+    --oxfordColor:hsl(222, 44%, 14%);
+    --changeColor: #0a85a3;
+}
+.productCard h5{
+    color: var(--oxfordColor);
+    font-family: var(--font1);
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: bolder;
+}
+.stars{
+
+    padding-bottom: 0.5rem;
+}
+.feature1{
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4rem;
+}
+.feature2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4rem;
+}
+.features{
+    padding-top: 2rem;
+}
+.cost-book{
+position: relative;
+top: 1.5rem;
+}
+.stars span{
+    color: #08586C;
+    font-family: var(--font1);
+    font-size: 1.8rem;
+    font-weight: bolder;
+    position: relative;
+    bottom: 0.5rem;
+    padding-left: 0.8rem;
+}
+
+.features i{
+    font-family: var(--font1);
+    color: var(--oxfordColor);
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-right: 0.5rem;
+}
+.features span{
+    font-family: var(--font1);
+    color: #08586C;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.card-container .cards  button a{
+    background-color: #08586C;
+    font-weight: bolder;
+    color: aliceblue;
+    padding: 12px 30px 12px 20px;
+    font-size: 2rem;
+   border-radius: 8px;
+   position: relative;
+   transition: 0.5s;
+   left: 7rem;
+   width: max-content;
+}
+
+.card-container .cards button a:hover{
+    background-color: #077d9b;
+}
+.cost{
+    font-family: var(--font1);
+    color: #08586C;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    width: max-content;
+}
+@media(max-width:1250px){
+    .productCard .card-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:908px){
+    .productCard .card-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card-container .cards image{
+        height: auto;
+    }
+}
+@media(max-width:1250px){
+    .reels{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:908px){
+    .reels{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card-container .cards image{
+        height: auto;
+    }
+}
+.cards {
+    position: relative;
+}
+
+.image {
+    position: relative; /* Ensure proper stacking context */
+}
+
+.circle-icon {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 90px;
+    left: 335px;
+    z-index: 11;
+    font-weight: bolder;
+    display: none;
+    cursor: pointer;
+}
+
+.image:hover .circle-icon {
+    display: block;
+}
+
+.circle-icon i {
+    background-color: #08586C;
+    color: aliceblue;
+    border-radius: 50%;
+    padding: 15px;
+    font-weight: bolder;
+}
+
+
+
+
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.zoom-in {
+    animation: zoom-in 0.5s; /* Applying the zoom-in animation */
+}
+.caroffer{
+    background-color: #08586C;
+    color: white;
+    border: none;
+    position: absolute;
+    padding: 0.5rem;
+    font-size: 2rem;
+    width: 10rem;
+    height: 4rem;
+    padding-left: 1.3rem;
+    font-weight: bolder;
+z-index: 12;
+}
+.stars i{
+    color: goldenrod;
+}
+

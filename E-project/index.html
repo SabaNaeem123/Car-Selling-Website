@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta tags for responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- titte name and favicon icon  for website -->
+  <title>Car Breezy&nbsp;&nbsp;|&nbsp;&nbsp;Your Journey Our Passion</title>
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <!-- - google font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Didact+Gothic&family=Francois+One&family=Gothic+A1:wght@900&family=Lobster+Two&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap"
+    rel="stylesheet">
+  <!-- - material icon font-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+  <!-- CDN links for additional functions in website -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!--  - custom css link-->
+  <link rel="stylesheet" href="index2.css">
+<link rel="stylesheet" href="/index1.css">
+  <link rel="stylesheet" href="index3.css">
+</head>
+<style>
+  @media (min-width:500px) and (max-width:800px){
+    body{
+      max-width: max-content;
+    }
+  }
+  .reels{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    gap: 3rem;
+    margin-left: 4rem;
+  }
+  @media(max-width:1500px){
+    .reels{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media(max-width:1000px){
+    .reels{
+        grid-template-columns: repeat(3,1fr);
+    }
+ 
+}
+@media(max-width:786px){
+    .reels{
+        grid-template-columns: repeat(1,1fr);
+        margin-left: 15rem;
+    }
+    i.bx-up-arrow-alt {
+        color: aliceblue; /* Change color here */
+        background-color: var(--changeColor); /* Change background color here */
+        padding: 10px; /* Optional: Adjust padding for the circle */
+        border-radius: 50%; /* Optional: Makes the circle */
+        font-weight: bolder;
+        font-size: 5rem;
+        cursor: pointer;
+        position: relative;
+        top: 60rem;
+        left: 52rem;
+        position: fixed;
+         z-index: 1000;
+         transition: bottom 0.3s ease-in-out;
+      } 
+}
+@media(max-width:500px){
+    .reels{
+        grid-template-columns: repeat(1,1fr);
+    }
+ 
+}
+/* CSS for styling the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0a85a3; /* Background color */
+    color: hsl(222, 44%, 14%); /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease forwards, slideIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Animations for opening */
+    overflow-x: hidden;
+}
+body{
+  overflow-x: hidden;
+}
+/* CSS for closing animation of the popup */
+@keyframes fadeOutAndShrink {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+}
+
+.popup.closing {
+    animation: fadeOutAndShrink 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -150%); }
+    to { transform: translate(-50%, -50%); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: hsl(222, 44%, 14%);
+    color: aliceblue;
+    font-weight: bolder;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    z-index: 1200;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 30px;
+    background-color: #0a85a3;
+}
+
+.tab-button {
+    padding-right: 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: hsl(222, 44%, 14%);
+    font-weight: bolder;
+}
+
+.tab-button.active {
+    background-color: hsl(222, 44%, 14%);
+    color: aliceblue;
+}
+
+.tab-content {
+    line-height: 40px;
+    display: none;
+    padding: 10px;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+.tab-content h3{
+    color: hsl(222, 44%, 14%);
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.tab-content.active {
+    display: block;
+}
+/* CSS for image titles */
+.image-title {
+    text-align: center; /* Center the title text */
+    margin-top: 5px; /* Adjust the top margin as needed */
+}
+/* CSS for grid layout */
+.car-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row {
+    width: 100%; /* Take full width of container */
+    display: flex;
+    justify-content: space-between; /* Space between images */
+    margin-bottom: 20px; /* Adjust margin between rows */
+}
+
+.car-image {
+    flex: 0 0 48%; /* Adjust width to fit two images with a small gap */
+    position: relative; /* Position for title */
+}
+
+.image-title {
+    text-align: center; /* Center the title text */
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 80px; /* Center horizontally */
+    width: 40%; /* Take full width of container */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* Title text color */
+    padding: 5px 0; /* Adjust padding as needed */
+}
+</style>
+<body>
+
+  <div id="checkerarrow">
+     <!-- =====  HEADER ===== -->
+     <div class="upper">
+      <div class="visitor-counter">
+          <a href="#">
+          <i class="ri-group-fill"></i>
+          <div class="counter" id="counter"></div>
+          <p class="counter-p">USERS CONNECTED</p>
+          </a>
+      </div>
+      <section class="home">
+          <div class="home-text">
+              <div class="txt">
+                <p class="animated-text">
+                  <span> <a href="#">Stay informed with the latest updates and offers!</a></span>
+                  <span> <a href="#">For inquiries, call us at : +92 956320765</a></span>
+                </p> 
+              </div>
+          </div>
+      </section>
+      <div class="logIn-register" style="position: absolute; left: 93em;">
+          <div class="logIn">
+              <a href="/login.html">
+                  <i class="fas fa-lock"></i>
+                  Log in</a> 
+          </div>
+          <div class="register">
+              <a href="/register.html">
+                  <i class="fas fa-user"></i>
+                  Register</a>
+          </div>
+      </div>
+  </div>
+  <!-- =====  NAVIGATION BAR  ===== -->
+  <div class="conatainer">
+      <header class="header" style="height: 5.75em;">
+          <div class="container">
+              <div class="logo">
+                  <img src="logo.png" alt="logo">
+              </div>
+              <nav class="nav-menu" style="background-color: black;">
+                  <div class="head">
+                      <div class="logo"><img src="logo.png" alt="logo"></div>
+                      <button type="button" class="close-menu-btn"></button>
+                  </div>
+                  <ul>
+                      <li><a href="/index.html" class="active">Home</a></li>
+                      <li><a href="/blog.html">Blogs</a></li>
+                      <li class="dropdown">
+                          <a href="#">Categories</a>
+                          <i class="fa-solid fa-chevron-down dropdownBtn"></i>
+                          <ul class="sub-menu">
+                              <li><a href="/top trending category.html"><span>Top Trending</span></a></li>
+                              <li><a href="/new.html"><span>New Cars</span></a></li>
+                              <li><a href="/used.html"><span>Used Cars</span></a></li>
+                             
+                              <li><a href="/offer.html" style="margin-right: 40px;"><span>Offers</span></a></li>
+                          </ul>
+                      </li>
+                      <li><a href="index2.html">Accessories</a></li>
+                      <li><a href="/about us.html">About</a></li>
+                      <li class="dropdown">
+                          <a href="/merge.html">Contact</a>
+                          <i class="fa-solid fa-chevron-down"></i>
+                          <ul class="sub-menu">
+                              <li><a href="#"><span>Phone</span></a></li>
+                              <li><a href="#"><span>E-mail</span></a></li>
+                              <li><a href="#"><span>Customer Support</span></a></li>
+                              <li><a href="#"><span>Inquiries</span></a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </nav>
+              <div class="header-right" style="position: absolute; left: 94em;" >
+                  <a href="index2.html">
+                      <div  class="icon-cart">
+                          <i class="fa-solid fa-shopping-cart"></i>
+                      </div>
+                  </a>
+                  <div class="search-box">
+                      <div class="searchBox">
+                          <i class="bx bx-x cancel"></i>
+                          <i class="bx bx-search search"></i>
+                      </div>    
+                      <div class="search-field">
+                          <input type="text" placeholder="Search...">
+                          <i class="bx bx-search"></i>
+                      </div>
+                  </div>
+                  <button type="button" class="open-menu-btn">
+                      <span class="line line-1"></span>
+                      <span class="line line-2"></span>
+                      <span class="line line-3"></span>
+                  </button>
+              </div>
+          </div>
+      </header>
+        <div id="contentTab"></div>
+  </div>
+
+    <div class="banner-top" style="margin-top: 5rem;">
+      <span class="year">2018 - 2023</span>
+      <a href="/" class="logo"><img src="" alt=""></a>
+      <a href="#" class="menu" onclick="toggleMenu()"></a>
+    </div>
+    <div class="banner">
+      <ul class="nav">
+        <li><a href="#" onclick="changeVideo('carbreezy-1');">750S SPIDER</a></li>
+        <li><a href="#" onclick="changeVideo('carbreezy-2');">ARTURA</a></li>
+        <li><a href="#" onclick="changeVideo('carbreezy-3');">750S</a></li>
+        <li><a href="#" onclick="changeVideo('carbreezy-4');">765LT</a></li>
+        <li><a href="#" onclick="changeVideo('carbreezy-5');">765LT SPIDER</a></li>
+      </ul>
+      <div class="bd-video-list">
+        <video class="bg-video carbreezy-1 active" src="carbreezy-1.mp4" autoplay loop muted></video>
+        <video class="bg-video carbreezy-2" src="carbreezy-2.mp4" autoplay loop muted></video>
+        <video class="bg-video carbreezy-3" src="carbreezy-3.mp4" autoplay loop muted></video>
+        <video class="bg-video carbreezy-4" src="carbreezy-4.mp4" autoplay loop muted></video>
+        <video class="bg-video carbreezy-5" src="carbreezy-5.mp4" autoplay loop muted></video>
+      </div>
+      <div class="content">
+        <h1>Rev up your journey with our premier car dealership.</h1>
+        <h3 class="model carbreezy-1 active">765LT SPIDER</h3>
+        <h3 class="model carbreezy-2" style="color: #92ff00;">ARTURA</h3>
+        <h3 class="model carbreezy-3" style="color: #ff0015;">750S</h3>
+        <h3 class="model carbreezy-4" style="color: #ff2e00;">765LT</h3>
+        <h3 class="model carbreezy-5" style="color: #bbc0dd;">750S SPIDER</h3>
+        <a href="top trending category.html" style="padding-right: 15rem;">Explore</a>
+    </div>
+      <!-- Video Play and Pause button -->
+      <a class="pause active" onclick="pauseVideo();">
+        <i class="ri-pause-circle-line"></i>
+      </a>
+      <a class="play" onclick="playVideo();">
+        <i class="ri-play-circle-line"></i>
+      </a>
+      <div class="screen">
+        <div class="shadow"></div>
+        <div>
+          <span style="--i: 0">
+            <!-- Insert the screen video -->
+            <!-- video data mapping -->
+            <!-- match the video name with the class name -->
+            <video class="trailer carbreezy-1 screen-video active" src="carbreezy-1.mp4" autoplay loop muted></video>
+            <video class="trailer carbreezy-2 screen-video" src="carbreezy-2.mp4" autoplay loop muted></video>
+            <video class="trailer carbreezy-3 screen-video" src="carbreezy-3.mp4" autoplay loop muted></video>
+            <video class="trailer carbreezy-4 screen-video" src="carbreezy-4.mp4" autoplay loop muted></video>
+            <video class="trailer carbreezy-5 screen-video" src="carbreezy-5.mp4" autoplay loop muted></video>
+          </span>
+          <span style="--i: 1">
+            <video src="trailer-1.mp4" class="screen-video" autoplay loop muted></video>
+          </span>
+          <span style="--i: 2">
+            <video src="trailer-2.mp4" class="screen-video" autoplay loop muted></video>
+          </span>
+          <span style="--i: 3">
+            <video src="trailer-3.mp4" class="screen-video" autoplay loop muted></video>
+
+          </span>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="carousel">
+          <a class="carousel-item" href="#" onclick="changeVideo('carbreezy-1');">
+            <img src="carbreezy-1.jpg" alt="">
+            <h4>765LT SPIDER</h4>
+        </a>
+        <a class="carousel-item" href="#" onclick="changeVideo('carbreezy-2');">
+            <img src="carbreezy-2.jpg" alt="">
+            <h4 style="color: #92ff00;">ARTURA</h4>
+        </a>
+        <a class="carousel-item" href="#" onclick="changeVideo('carbreezy-3');">
+            <img src="carbreezy-3.jpeg" alt="">
+            <h4 style="color: #ff0015;">750S</h4>
+        </a>
+        <a class="carousel-item" href="#" onclick="changeVideo('carbreezy-4');">
+            <img src="carbreezy-4.jpeg" alt="">
+            <h4 style="color: #ff2e00;">765LT</h4>
+        </a>
+        <a class="carousel-item" href="#" onclick="changeVideo('carbreezy-5');">
+            <img src="carbreezy-5.jpeg" alt="">
+            <h4 style="color: #bbc0dd;">750S SPIDER</h4>
+        </a>
+        </div>
+      </div>
+    </div>
+    <ul class="sci">
+      <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
+      <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+      <li><a href="#"><i class="ri-youtube-fill"></i></a></li>
+    </ul>
+
+  </div>
+  <!-- saba -->
+  <div class="scrollingtop" style="display: block;">
+    <i class='bx bx-up-arrow-alt' id="scrollToTopBtn"></i>
+  </div>
+  </div>
+  <script>
+    // Show the scroll-to-top button when the user scrolls down past the banner
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      var bannerHeight = document.getElementById("checkerarrow").offsetHeight; // Adjust "banner" to the ID of your banner element
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+      if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+
+      var bannerTop = document.getElementById("banner").getBoundingClientRect().top;
+      if (bannerTop >= 0) {
+        scrollToTopBtn.style.display = "none";
+      }
+    }
+    // Smooth scroll to top when the user clicks on the button
+    document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+      scrollToTop(2000); // Adjust the duration (in milliseconds) for slower scrolling
+    });
+
+    // Easing function for smooth scrolling
+    function easeInOutQuad(t, b, c, d) {
+      t /= d;
+      if (t < 0.5) return 2 * t * t * c + b;
+      else return -1 + (4 - 2 * t) * t * c + b;
+    }
+scrollToTop(1000);
+    function scrollToTop(duration) {
+      const start = window.pageYOffset;
+      const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+      function scroll() {
+        const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const timeElapsed = currentTime - startTime;
+        window.scrollTo(0, easeInOutQuad(timeElapsed, start, -start, duration));
+        if (timeElapsed < duration) requestAnimationFrame(scroll);
+      }
+
+      requestAnimationFrame(scroll);
+    }
+
+  </script>
+ 
+  <!-- 
+        - #ABOUT
+      -->
+
+    <!-- 
+        - #WORK
+      -->
+  
+    <section class="section work" aria-labelledby="work-label">
+      <div class="container">
+  
+        <p class="section-subtitle :light" id="work-label"
+          style="color: hsl(222, 44%, 14%); font-size: 2.6rem; font-weight: bold; font-family: Poppins, sans-serif;"><i
+            class="bx bx-car car" style="font-weight: bolder; padding-right: 1rem; font-size: 3rem;"></i>Car Dealers</p>
+  
+        <h2 class="h2 section-title"
+          style="color: #0a85a3; font-weight: bolder; font-family: Poppins, sans-serif; font-size: 6rem;">Best Dealers In
+          Your City</h2>
+  
+        <ul class="has-scrollbar">
+  
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer4.jfif" width="350" height="406" loading="lazy" alt="Engine Repair"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+  
+  
+                <h3 class="h3 card-title">Perfect Car</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;"> +92 300 1234567 </span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span>Street 12, Saddar, Karachi</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="800" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer3.jfif" width="350" height="406" loading="lazy" alt="Engine Repair"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+                <h3 class="h3 card-title">Auto Car</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;">+92 321 9876543 </span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span>Mall Road, Lahore</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="1000" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer1.jfif" width="350" height="406" loading="lazy" alt="Car Tyre change"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+                <h3 class="h3 card-title">Auto Motive</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;">+92 333 5558888 </span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span>F-10 Markaz, Islamabad</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+  
+  
+        </ul>
+  
+      </div>
+    </section>
+  
+    <section class="section work  bottomWork" aria-labelledby="work-label">
+      <div class="container">
+  
+  
+        <ul class="has-scrollbar">
+  
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="1500" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer2.jfif" width="350" height="406" loading="lazy" alt="Engine Repair"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+                <h3 class="h3 card-title">Car Line</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;"> +92 345 1112223 </span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span>Jail Road, Multan</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="1700" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer5.jfif" width="350" height="406" loading="lazy" alt="Engine Repair"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+                <h3 class="h3 card-title">Car Shop</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;">+92 312 9990001 </span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span>University Road, Peshawar</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+  
+          <li class="scrollbar-item">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="1900" data-aos-easing="ease-in-out"
+              data-aos-duration="10000" data-aos-offset="100">
+  
+              <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                <img src="/car dealer6.jfif" width="350" height="406" loading="lazy" alt="Battery Adjust"
+                  class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+                <h3 class="h3 card-title">Car Spa</h3>
+  
+                <div class="dealer-call">
+                  <i class='bx bxs-phone'></i>
+                  <span style="color: #0a85a3;">+92 331 7773332</span>
+                </div>
+                <div class="dealer-location">
+                  <i class='bx bxs-location-plus'></i>
+                  <span> Garden Town, Lahore</span>
+                </div>
+              </div>
+  
+            </div>
+          </li>
+  
+        </ul>
+  
+      </div>
+    </section>
+  
+    </article>
+    </main>
+    <div style="position: relative; bottom: 25rem;">
+    <section class="section service has-bg-image" aria-labelledby="service-label"
+    style="background-image: url('./assets/images/service-bg.jpg')">
+    <div class="container">
+      <p class="multiplwe-animations section-subtitle :light" id="work-label"
+        style="color: hsl(222, 44%, 14%); font-size: 4rem; font-weight: bold; font-family: Poppins, sans-serif; position: relative; top: 20px;"
+        data-aos="flip-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-repeat="3"
+        data-aos-delay="12000" data-aos-easing="ease-in-out" data-aos-duration="90000"><i class="bx bx-car car"
+          style="font-weight: bolder; padding-right: 1rem; font-size: 3rem;"></i>Spin into Action <strong>,</strong>
+        Dive into Car Reels Now!</p>
+    </div>
+  </section>
+    <div  class="reels">
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=1011128553826787526" height="585" width="300" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=877850152354666404" height="580" width="300" frameborder="0" scrolling="no" muted></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=302515299988163866" height="580" width="300" frameborder="0" scrolling="no" ></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=877850152354666136" height="580" width="300" frameborder="0" scrolling="no" ></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=300756081382470320" height="580" width="300" frameborder="0" scrolling="no" ></iframe>
+      <!-- <iframe src="https://assets.pinterest.com/ext/embed.html?id=1010987816326619571" height="580" width="300" frameborder="0" scrolling="no" ></iframe> -->
+  </div>
+</div>
+ 
+
+  <!-- product page session start -->
+  <section class="productCard" style="position: relative; bottom: 20rem;">
+    <h4><i class="bx bx-car"></i>Let's Check Latest cars</h4>
+    <h2>Your Journey , Our passion</h2>
+
+    <h3>Top Trending Cars</h3>
+    <div class="card-container">
+
+      <script>
+        function changeicon(clickedIcon) {
+          clickedIcon.classList.toggle('bx-heart');
+          clickedIcon.classList.toggle('bxs-heart');
+        }
+
+        function showicon(card) {
+          var icon = card.querySelector('.circle-icon');
+          icon.style.display = "block";
+        }
+
+        function hidecon(cards) {
+          var icon = card.querySelector('.circle-icon');
+
+          icon.style.display = "none";
+        }
+
+      </script>
+
+
+
+      <div class="cards">
+
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/Bugatti Bolide.png" alt="">
+
+        </div>
+        <h5>McLaren 720S</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>6.2k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>9-10 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2022 </span>
+            <span><i class="bx bx-target-lock"></i>Sports Car</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$280,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+
+      <div class="cards">
+        <div class="image">
+          <img src="/03.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+        </div>
+
+        <h5>Mercedes-AMG GT</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>5.7k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>5-7 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2020</span>
+            <span><i class="bx bx-target-lock"></i>Parallel Hybrid</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$115,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="image">
+          <img src="/07.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Lamborghini Huracán</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>7K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>8-9 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2023</span>
+            <span><i class="bx bx-target-lock"></i>Sports Car</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$200,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+
+      <div class="cards">
+        <div class="image">
+          <img src="/04.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Toyota Land Cruiser Prado</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>6.9K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>6-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2019</span>
+            <span><i class="bx bx-target-lock"></i>SUV</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"> $55,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="image">
+          <img src="/audi.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Audi R8</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>5.9K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i> Automatic</span>
+            <span><i class="bx bx-label"></i>5-6 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2018</span>
+            <span><i class="bx bx-target-lock"></i>PHEV </span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$200,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="image">
+          <img src="/market-image.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Honda Accord Hybrid</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>5.2k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>7-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2023</span>
+            <span><i class="bx bx-target-lock"></i>Hybird</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$37,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+    </div>
+
+    <h3 style="margin-top: 10rem; margin-bottom: 10rem;">Cars In Offers</h3>
+    <div class="card-container">
+
+      <div class="cards">
+        <div class="caroffer">50% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="bmw.png" alt="">
+
+        </div>
+        <h5>Tesla Model 3</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>7.8k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>5-6 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2020 </span>
+            <span><i class="bx bx-target-lock"></i> Electric Sedan</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del>$60,000 USD </del><br>$30,000 USD  </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="caroffer">10% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/offer2.png" alt="">
+
+        </div>
+        <h5>Honda CR-V</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>8.1k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>7-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2017 </span>
+            <span><i class="bx bx-target-lock"></i>SUV</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del>$35,000 USD </del><br>  $25,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="caroffer">18% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/05.png" alt="" style="width:50vh;" height="200vh">
+
+        </div>
+        <h5>Audi Q5</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>6.6k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>7-10 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2017 </span>
+            <span><i class="bx bx-target-lock"></i>SUV</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del> $55,000 USD</del><br>$43,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="caroffer">22% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/offer,.png" alt="">
+
+        </div>
+        <h5>Ford F-150</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>9K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>10-11 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2021 </span>
+            <span><i class="bx bx-target-lock"></i>Hybird</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del>  $70,000 USD</del><br> $50,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="caroffer">8% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/sedan1.png" alt="">
+
+        </div>
+        <h5>BMW 3 Series</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>10k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>9-12 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i> Model 2022</span>
+            <span><i class="bx bx-target-lock"></i>Sedan</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del>$50,000 USD</del><br> $46,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards">
+        <div class="caroffer">35% OFF</div>
+        <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+          </div>
+          <img src="/offer..png" alt="">
+
+        </div>
+        <h5>Toyota RAV4</h5>
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>6k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>6-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i> Model 2019</span>
+            <span><i class="bx bx-target-lock"></i>SUV</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"><del>$36,000 USD</del><br>$24,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+ </div>
+
+ <h3 style="margin-top: 10rem; margin-bottom: 10rem;">New Cars</h3>
+ <div class="card-container">
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/new car1.png" alt="">
+
+    </div>
+    <h5>McLaren 765LT</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>12K Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>14-15 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2022</span>
+        <span><i class="bx bx-target-lock"></i>Sports Cars</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost"> $358,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/newcar3.png" alt="">
+
+  </div>
+  <h5> Lamborghini Huracán EVO.</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>15K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>9-10 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019</span>
+      <span><i class="bx bx-target-lock"></i>Sports Car</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $261,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/newcar2.png" alt="">
+
+  </div>
+  <h5> Mercedes-AMG GT 4-Door Coupe</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>14K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>10-12 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2020</span>
+      <span><i class="bx bx-target-lock"></i>  Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$200,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/newcar4.png" alt="">
+  </div>
+  <h5>BMW M3</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>10K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-9 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2021</span>
+      <span><i class="bx bx-target-lock"></i>Sports Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$200,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/newcar5.png" alt="">
+
+  </div>
+  <h5> Ford F-150 Tremor</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>8.6K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>8-10 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2021</span>
+      <span><i class="bx bx-target-lock"></i>PHEV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $65,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/newcar6.png" alt="">
+
+  </div>
+  <h5>Tesla Model Y</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>7.2K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2022 </span>
+      <span><i class="bx bx-target-lock"></i>Electric Compact SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $60,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+</div>
+
+<h3 style="margin-top: 10rem; margin-bottom: 10rem;">Used Cars</h3>
+<div class="card-container">
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/12.png" alt="">
+  
+    </div>
+    <h5>Toyota Highlander
+    </h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>5.5k Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>5-6 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2015</span>
+        <span><i class="bx bx-target-lock"></i>Manual</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost">  $30,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/usedcar2.png" alt="">
+  
+    </div>
+    <h5>Audi A4</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>5.9K Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>12-14 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2018</span>
+        <span><i class="bx bx-target-lock"></i>Sedan</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost">  $40,000 USD</div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/usedcar3.png" alt="">
+  
+    </div>
+    <h5> Honda HR-V</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>4K Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>5-7 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2016 </span>
+        <span><i class="bx bx-target-lock"></i>Subcompact SUV</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost"> $20,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/usedcar4.png" alt="">
+  
+    </div>
+    <h5>Tesla Model S</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>4.1K Reviews Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>4-6 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2014 </span>
+        <span><i class="bx bx-target-lock"></i>Electric Sedan</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost">  $32,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/usedcar5.png" alt="">
+  
+    </div>
+    <h5>Ford Ranger Tremor</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>5K Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>6-7 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2017 </span>
+        <span><i class="bx bx-target-lock"></i>Hybird</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost"> $40,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+      <div class="circle-icon" id="circle-icon">
+        <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+          onclick="changeicon(this)"></i><br>
+        <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+      </div>
+      <img src="/usedcar6.png" alt="">
+  
+    </div>
+    <h5> Lexus RX</h5>
+    <div class="stars" style="display: flex;">
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star"></i>
+      <i class="bx bxs-star-half"></i>
+      <span>6.2K  Reviews</span>
+    </div>
+    <hr>
+    <div class="features">
+      <div class="feature1">
+        <span><i class="bx bx-error-circle"></i>Automatic</span>
+        <span><i class="bx bx-label"></i>8-9 km/l</span>
+      </div>
+      <div class="feature2">
+        <span><i class="bx bx-car"></i> Model 2019 </span>
+        <span><i class="bx bx-target-lock"></i>Electric SUV</span>
+      </div>
+    </div>
+    <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+      <div class="cost"> $42,000 USD </div>
+      <button><a href="#">Book Now</a></button>
+    </div>
+  </div>
+
+  </div>
+</section>
+  <!-- 
+        - #SERVICE
+      -->
+
+  <section class="section service has-bg-image" aria-labelledby="service-label"
+    style="background-image: url('./assets/images/service-bg.jpg'); position: relative; bottom: 20rem;">
+    <div class="container">
+
+      <p class="section-subtitle :light" id="service-label"
+        style="color: hsl(222, 44%, 14%); font-size: 2.5rem; font-weight: bold; font-family: Poppins, sans-serif;"><i
+          class="bx bx-car car" style="font-weight: bolder; padding-right: 1rem; font-size: 3rem;"></i>Our services</p>
+
+      <h2 class="h2 section-title"
+        style="color: #0a85a3; font-weight: bolder; font-family: Poppins, sans-serif; font-size: 3.5rem;">We Also
+        Provide High Quality Accessories For your Vehicle</h2>
+
+      <ul class="service-list">
+
+        <li>
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="1800" data-aos-easing="ease-in-out"
+            data-aos-duration="6000">
+
+            <figure class="card-icon">
+              <img src="/dashcam.jfif" width="110" height="110" loading="lazy" alt="Engine Repair">
+            </figure>
+
+            <h3 class=" card-title"> Dash Cam</h3>
+
+            <p class="card-text">
+              Captures driving footage for security.
+            </p>
+
+
+
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="2200" data-aos-easing="ease-in-out"
+            data-aos-duration="6000">
+
+            <figure class="card-icon">
+              <img src="/seatcover.jfif" width="110" height="110" loading="lazy" alt="Brake Repair">
+            </figure>
+
+            <h3 class=" card-title"> Seat Covers</h3>
+
+            <p class="card-text">
+              Protects and enhances car seats' appearance.
+
+            </p>
+
+
+
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="2600" data-aos-easing="ease-in-out" d
+            ata-aos-duration="6000">
+
+            <figure class="card-icon">
+              <img src="/Car Air Purifier.jpg" width="110" height="110" loading="lazy" alt="Tire Repair">
+            </figure>
+
+            <h3 class=" card-title"> Car Air Purifier</h3>
+
+            <p class="card-text">
+              Cleanses air for fresher driving.
+            </p>
+
+
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="1400" data-aos-easing="ease-in-out"
+            data-aos-duration="6000">
+
+            <figure class="card-icon">
+              <img src="/TMPS.jfif" width="110" height="110" loading="lazy" alt="Battery Repair">
+            </figure>
+
+            <h3 class=" card-title">TPMS</h3>
+
+            <p class="card-text">
+              Monitors tire pressure for safety.
+            </p>
+
+
+          </div>
+        </li>
+
+        <li class="service-banner" data-aos="zoom-in" data-aos-delay="300" data-aos-easing="ease-in-out"
+          data-aos-duration="6000">
+          <img src="/images-removebg-preview (5).png" width="646" height="380" loading="lazy" alt="Red Car"
+            class="move-anim">
+        </li>
+
+        <li>
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="3000" data-aos-easing="ease-in-out"
+            data-aos-duration="6000">
+
+            <figure class="card-icon">
+              <img src="/Roof Rack.jfif" width="110" height="110" loading="lazy" alt="Steering Repair">
+            </figure>
+
+            <h3 class=" card-title"> Roof Rack</h3>
+
+            <p class="card-text">
+              Adds storage space for outdoor gear.
+            </p>
+
+
+
+          </div>
+        </li>
+
+      </ul>
+
+
+      <a href="#" class="btn" data-aos="flip-left" data-aos-delay="5000" data-aos-easing="ease-in-out"
+        ata-aos-duration="6000" style="margin-bottom: 2rem;">
+        <span class="span" style="display: block;">Explore Accessories</span>
+
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+  <section class="section about has-before" aria-labelledby="about-label" id="counter" style="position: relative; bottom: 10rem;">
+    <div class="container">
+
+      <figure class="about-banner">
+        <img src="/rohmbus.png" data-aos="flip-left" data-aos-delay="700" data-aos-duration="6000"
+          data-aos-easing="ease-in-out" width="10em" height="800px" loading="lazy" alt="vehicle repire equipments"
+          class="w-100 " style="width: 30rem; position: relative; left: 0rem;">
+      </figure>
+
+      <div class="about-content">
+
+
+        <h2 class="h2 section-title">We’re Commited to Meet the quality</h2>
+
+        <p class="section-text">"Discover a seamless car buying experience with our extensive inventory and
+          user-friendly search tools."
+        </p>
+
+        <p class="section-text">
+          "Browse our diverse collection of pre-owned and new vehicles, all at competitive prices."
+        </p>
+
+        <ul class="about-list">
+
+          <li class="about-item" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="6000"
+            data-aos-easing="ease-in-out" data-aos-once="true">
+            <p>
+              <strong class="display-1 strong counter-container" data-target-count="5000"><span>0</span></strong> Happy
+              Clients
+            </p>
+          </li>
+
+          <li class="about-item" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="6000"
+            data-aos-easing="ease-in-out" data-aos-once="true">
+            <p>
+              <strong class="display-1 strong counter-container" data-target-count="1000"><span>0</span></strong>
+              Available Cars
+            </p>
+          </li>
+
+          <li class="about-item" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="6000"
+            data-aos-easing="ease-in-out" data-aos-once="true">
+            <p>
+              <strong class="display-1 strong counter-container" data-target-count="500"><span>0</span></strong>Team
+              Members
+            </p>
+          </li>
+
+          <li class="about-item" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="6000"
+            data-aos-easing="ease-in-out" data-aos-once="true">
+            <p>
+              <strong class="display-1 strong counter-container" data-target-count="18"><span>0</span></strong> Years In
+              Market
+            </p>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <div style="position: relative; bottom: 0rem;">
+    <section class="section__container testimonial__container" id="client">
+      <h5 class="section__subheader"
+        style=" color: hsl(222, 44%, 14%);font-family: Poppins, sans-serif; font-size: 3rem; font-weight: bolder;"><i
+          class="bx bx-car car" style="font-weight: bolder; padding-right: 1rem; font-size: 3rem;"></i>CLIENT
+        TESTIMONIALS</h5>
+      <h2 class="section__header"
+        style="color: #0a85a3; font-family:Poppins, sans-serif; font-weight: bolder; font-size: 5rem;">100% Approved By
+        Customers</h2>
+    </section>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-1.jpg" alt="testimonial" />
+            <p>
+              "I recently purchased a car from Car Breezy, and I'm extremely satisfied with my experience. The staff was
+              friendly and helpful throughout the entire process. I found the perfect car at a great price. Highly
+              recommend!"
+            </p>
+            <h4>- Sana Ahmed</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-2.jpg" alt="testimonial" />
+            <p>
+              "I was impressed with the quality of the cars available on Car Breezy's website. The photos and
+              descriptions were accurate, and I felt confident in my purchase. Highly recommended!"
+            </p>
+            <h4>- Ali Khan </h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-3.jpg" alt="testimonial" />
+            <p>
+              "I've purchased multiple cars from Car Breezy, and each time I've been satisfied with the quality and
+              performance of the vehicles. Their website makes it easy to browse and compare different options."
+            </p>
+            <h4>- Mohammad Khan </h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="testimonial-4.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "I recently bought a car from Car Breezy's website, and I'm thrilled with my purchase. The car was exactly
+              as described, and the process was straightforward. Excellent service!"
+            </p>
+            <h4>- Aisha Malik </h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-5.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "I had a great experience buying a car from Car Breezy's website. The website was easy to navigate, and
+              the customer service was excellent. I highly recommend them to anyone looking for a quality car."
+            </p>
+            <h4>- Usman Ali</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="testimonial-6.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "Car Breezy offers a wide range of high-quality cars on their website. I found the perfect car for my
+              family, and the purchasing process was straightforward. I'm very satisfied with my experience."
+            </p>
+            <h4>- Fatima Ahmed</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="testimonial-7.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "Car Breezy's website made it easy for me to find the perfect car within my budget. The photos and
+              descriptions were accurate, and the purchasing process was smooth. Overall, a great experience."
+            </p>
+            <h4>- Saima Ali</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-8.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "I recently purchased a car from Car Breezy's website, and I'm extremely happy with my decision. The car
+              was in excellent condition, and the price was competitive. I'll definitely be recommending them to
+              others."
+
+            </p>
+            <h4>- Adnan Khan: </h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-9.jpg" alt="testimonial" style="height: 12rem; max-width: 100px;">
+            <p>
+              "I've been a loyal customer of Car Breezy for years, and I've never been disappointed. Their website
+              offers a seamless car-buying experience, and the quality of their cars is unmatched. Highly recommended!"
+            </p>
+            <h4>- Mehreen Khan:</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial__card">
+            <img src="/testimonial-10.jpg" alt="testimonial" style="height: 10rem; max-width: 100px;">
+            <p>
+              "Car Breezy's website exceeded my expectations. I found the perfect car quickly and easily, and the
+              checkout process was simple. I'm extremely satisfied with my purchase and the overall experience."
+            </p>
+            <h4>- Kamran Ahmed:</h4>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+  <div id="image-container" data-aos="zoom-in-down" data-aos-delay="800" data-aos-easing="ease-in-out"
+    data-aos-duration="20000" data-aos-offset="100" data-aos-easing="linear" onclick="handleImageClick(event)">
+    <img src="/Untitled design (3).png" alt="Your Image">
+    <a href="https://www.apple.com/ios/carplay/" target="_blank" class="clickable-area"
+      style="top: 70%; left: 10%; width: 12%; height: 15%;"></a>
+    <a href="https://play.google.com/store/apps/details?id=ccom.carplaymirror.wireless" target="_blank"
+      class="clickable-area" style="top: 70%; left: 25%; width: 18%; height: 15%;"></a>
+
+  </div>
+
+  <!-- 
+  - #FOOTER
+-->
+  <!--Footer Part 1-->
+ 
+    <section class="section service has-bg-image subssect" aria-labelledby="service-label"
+    style="background-image: url('./assets/images/service-bg.jpg')">
+    <div class="footer_part1" style="position: relative; bottom: 10rem;">
+    <div class=" subscribearea" style="background-color: white;" id="NewsLetter">
+<!-- changed container class -->
+      <p class="section-subtitle :light" id="service-label" 
+        style="color: hsl(222, 44%, 14%); font-size: 2.5rem; font-weight: bold; font-family: Poppins, sans-serif; text-align: center; "><i
+          class="bx bx-car car" style="font-weight: bolder; padding-right: 1rem; font-size: 3rem;"></i>NewsLetter</p>
+
+      <h2 class="h2 section-title" id="newsletter"
+        style="color: #0a85a3; font-weight: bolder; font-family: Poppins, sans-serif; font-size: 3.5rem; ">Let's keep in touch ! Get email offers & the latest news from us</h2>
+
+    <!-- <div class="subscribe"> -->
+      <form action="" id="form">
+        <input type="email" placeholder="Enter your email" required="true" autofocus autocomplete="on"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Format:example@gmail.com" id="input">
+          <button class="form-button" id="form-button">Subscribe </button>
+      <div id="resultDiv" style="color: black;"></div>
+
+      </form>
+  <!-- Popup for car details -->
+  <div class="popup" id="car-popup">
+    <span class="close-btn" id="close-popup"><i class='bx bx-x' style="color: aliceblue; font-size: 3rem; position: relative;  top: 3.2px;"></i></span>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="info">Gallery</button> <!-- New Info Tab Button -->
+        <button class="tab-button " data-tab="internal">Internal Specifications</button>
+        <button class="tab-button" data-tab="external">External Details</button>
+        <button class="tab-button" data-tab="engine">Engine Details</button>
+        <button class="tab-button" data-tab="dimensions">Dimensions</button>
+      
+    </div>
+    <div id="internal" class="tab-content ">
+        <h3>Internal Specifications</h3>
+        <ul>
+            <li>Interior Material: Premium Nappa Leather</li>
+            <li>Seating Capacity: 4</li>
+            <li>Infotainment System: 12.3-inch Touchscreen Display with Navigation</li>
+            <li>Sound System: Bose® Panaray® 34-Speaker Sound System</li>
+            <li>Climate Control: Tri-Zone Automatic Climate Control</li>
+            <li>Driver Assistance: Adaptive Cruise Control, Lane Keep Assist, Blind Spot Monitoring</li>
+        </ul>
+    </div>
+    <div id="external" class="tab-content">
+        <h3>External Details</h3>
+        <ul>
+            <li>Exterior Finish: Metallic Paint with Ceramic Coating</li>
+            <li>Body Style: Coupe</li>
+            <li>Wheels: 20-inch Forged Alloy Wheels</li>
+            <li>Lighting: Full LED Headlights with Adaptive Lighting</li>
+            <li>Roof: Power Tilt and Slide Panoramic Sunroof</li>
+            <li>Exterior Features: Power-Operated Trunk Lid, Automatic Parking System</li>
+            <li>
+               
+                <img src="/newcar2.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <div id="engine" class="tab-content">
+        <h3>Engine Details</h3>
+        <ul>
+            <li>Engine Type: Twin-Turbocharged V8</li>
+            <li>Displacement: 4.0 Liters</li>
+            <li>Horsepower: 600 hp</li>
+            <li>Torque: 590 lb-ft</li>
+            <li>Acceleration (0-60 mph): 3.5 seconds</li>
+            <li>Top Speed: 200 mph</li>
+        </ul>
+    </div>
+    <div id="dimensions" class="tab-content">
+        <h3>Dimensions</h3>
+        <ul>
+            <li>Length: 188.9 inches</li>
+            <li>Width: 76.9 inches</li>
+            <li>Height: 54.2 inches</li>
+            <li>Wheelbase: 112.4 inches</li>
+            <li>Curb Weight: 4,400 lbs</li>
+            <li>Ground Clearance: 5.1 inches</li>
+        </ul>
+    </div>
+    <!-- New Info Tab Content -->
+   <!-- New Info Tab Content -->
+  <div id="info" class="tab-content active">
+   
+    <div class="car-images-container">
+        <div class="car-image">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+        <div class="car-image">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <div class="car-image">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <div class="car-image">
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+        <div class="car-image">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+        <div class="car-image">
+            <img src="image6.jpg" alt="Image 6">
+        </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carList = document.querySelectorAll('.image');
+      const popup = document.getElementById('car-popup');
+      const closeButton = document.getElementById('close-popup');
+      const tabs = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+  
+      carList.forEach(car => {
+          car.addEventListener('click', function() {
+              // Show popup with animation
+              popup.style.display = 'block';
+              setTimeout(() => {
+                  popup.style.opacity = '1';
+              }, 50);
+  
+              // Update tab contents with car details
+              tabContents.forEach(content => {
+                  switch (content.id) {
+                      case 'internal':
+                          content.innerHTML = `
+                              <h3>Internal Specifications</h3>
+                              <ul>
+                                  <li>Interior Material: Premium Nappa Leather</li>
+                                  <li>Seating Capacity: 4</li>
+                                  <li>Infotainment System: 12.3-inch Touchscreen Display with Navigation</li>
+                                  <li>Sound System: Bose® Panaray® 34-Speaker Sound System</li>
+                                  <li>Climate Control: Tri-Zone Automatic Climate Control</li>
+                                  <li>Driver Assistance: Adaptive Cruise Control, Lane Keep Assist, Blind Spot Monitoring</li>
+                              </ul>
+                          `;
+                          break;
+                      case 'external':
+                          content.innerHTML = `
+                              <h3>External Details</h3>
+                              <ul>
+                                  <li>Exterior Finish: Metallic Paint with Ceramic Coating</li>
+                                  <li>Body Style: Coupe</li>
+                                  <li>Wheels: 20-inch Forged Alloy Wheels</li>
+                                  <li>Lighting: Full LED Headlights with Adaptive Lighting</li>
+                                  <li>Roof: Power Tilt and Slide Panoramic Sunroof</li>
+                                  <li>Exterior Features: Power-Operated Trunk Lid, Automatic Parking System</li>
+                              </ul>
+                          `;
+                          break;
+                      case 'engine':
+                          content.innerHTML = `
+                              <h3>Engine Details</h3>
+                              <ul>
+                                  <li>Engine Type: Twin-Turbocharged V8</li>
+                                  <li>Displacement: 4.0 Liters</li>
+                                  <li>Horsepower: 600 hp</li>
+                                  <li>Torque: 590 lb-ft</li>
+                                  <li>Acceleration (0-60 mph): 3.5 seconds</li>
+                                  <li>Top Speed: 200 mph</li>
+                              </ul>
+                          `;
+                          break;
+                      case 'dimensions':
+                          content.innerHTML = `
+                              <h3>Dimensions</h3>
+                              <ul>
+                                  <li>Length: 188.9 inches</li>
+                                  <li>Width: 76.9 inches</li>
+                                  <li>Height: 54.2 inches</li>
+                                  <li>Wheelbase: 112.4 inches</li>
+                                  <li>Curb Weight: 4,400 lbs</li>
+                                  <li>Ground Clearance: 5.1 inches</li>
+                              </ul>
+                          `;
+                          break;
+                          case 'info': // Updated for the Info tab
+        content.innerHTML = `
+            <h3>Cars Images With prices</h3>
+            <div class="car-images-container">
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/new car1.png" alt="Image 1"> <!-- Change this path -->
+                        <div class="image-title">$40,000 USD</div> <!-- Title for Image 1 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/convertibles1.png" alt="Image 2"> <!-- Change this path -->
+                        <div class="image-title">$55,000 USD</div> <!-- Title for Image 2 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/Bugatti Bolide.png" alt="Image 3"> <!-- Change this path -->
+                        <div class="image-title">$78,000 USD</div> <!-- Title for Image 3 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/newcar6.png" alt="Image 4"> <!-- Change this path -->
+                        <div class="image-title">$62,000 USD</div> <!-- Title for Image 4 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/offer..png" alt="Image 5"> <!-- Change this path -->
+                        <div class="image-title">$90,000 USD</div> <!-- Title for Image 5 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/suv2.png"  alt="Image 6"> <!-- Change this path -->
+                        <div class="image-title">$67,000 USD</div> <!-- Title for Image 6 -->
+                    </div>
+                </div>
+            </div>
+        `;
+        break;
+  
+  
+                  }
+              });
+          });
+      });
+  
+      closeButton.addEventListener('click', function() {
+          // Hide popup with animation
+          popup.style.opacity = '0';
+          setTimeout(() => {
+              popup.style.display = 'none';
+          }, 300);
+      });
+  
+      tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+              const targetTab = this.getAttribute('data-tab');
+              tabs.forEach(tab => tab.classList.remove('active'));
+              this.classList.add('active');
+              tabContents.forEach(content => {
+                  if (content.id === targetTab) {
+                      content.classList.add('active');
+                  } else {
+                      content.classList.remove('active');
+                  }
+              });
+          });
+      });
+  });
+  </script>
+    <!-- </div> -->
+  </div>
+</div>
+</section>
+  <footer class="footer" style="position: relative; bottom: 15rem;">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/logo.png" width="300" height="63" alt="autofix home" style=" width: 20rem;">
+          </a>
+
+          <p class="footer-text">
+            "With a rich history in the automotive industry, we're your trusted partner on the road ahead."
+          </p>
+
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="p">Monday – Thursday</p>
+
+            <span class="span">10:00 am – 12:oo am</span>
+          </li>
+
+          <li>
+            <p class="p">Friday</p>
+
+            <span class="span">2:00 pm – 12:00 am</span>
+          </li>
+
+          <li>
+            <p class="p">Saturday – Sunday</p>
+
+            <span class="span">12.00 am– 1@:00 pm</span>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Contact Info</p>
+          </li>
+
+          <li>
+            <a href="tel:+01234567890" class="footer-link">
+              <span class="material-symbols-rounded">call</span>
+
+              <span class="span">+01 2 3456 7890</span>
+            </a>
+          </li>
+
+          <li>
+
+            <a href="mailto:support@carBreezy.com" class="footer-link">
+              <span class="material-symbols-rounded">mail</span>
+
+              <span class="span">support@carBreezy.com</span>
+            </a>
+          </li>
+
+          <li>
+            <address class="footer-link address">
+              <a href="https://www.google.com/maps/place/CarBreezy/@46.9389075,-122.6629661,8z/data=!4m6!3m5!1s0x60b546c346aeea3b:0xfeba1f271446d939!8m2!3d46.9389075!4d-122.6629661!16s%2Fg%2F11t5m3gtkp?entry=ttu"
+                class="footer-link">
+                <span class="material-symbols-rounded"
+                  style="font-size: 3.5rem;">location_on</span>
+
+                <span class="span">D-4, Block H, North Nazimabad, Karachi</span>
+              </a>
+            </address>
+          </li>
+          <ul class="social-list" style="position: relative; top: 1.5rem;">
+            <li style="position: relative; top: 1.3rem;">
+              <a href="#" class="social-link">
+                <img src="/facebook.svg" alt="facebook">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="/instagram.svg" alt="instagram">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="/twitter.svg" alt="twitter">
+              </a>
+            </li>
+
+          </ul>
+        </ul>
+
+      </div>
+
+
+
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+
+        <img src="./assets/images/footer-shape-2.png" width="778" height="1000" loading="lazy" alt="Shape"
+          class="shape shape-2">
+
+
+        <img src="/hi-removebg-preview.png" width="805" height="800" loading="lazy" alt="Red Car"
+          class="shape shape-1 move-anim" style="height: 64rem; position: absolute; bottom: 4rem;">
+
+      </div>
+    </div>
+    <div class="ticker">
+
+      <p class="copyright"><span style="font-weight: bolder;">©</span> Copyright 2024 <span
+          style="font-weight: bolder;">|</span> Car Breezy <span style="font-weight: bolder;">|</span> All Rights
+        Reserved</p>
+
+      <div class="ticker-box">
+        <div class="ticker-content" id="tickerContent"></div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- 
+  - custom js link
+-->
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.carousel').carousel();
+    });
+  </script>
+  <script>
+function scrollToTop() {
+  // Scroll to the top of the page
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth" // You can change this to "auto" for instant scrolling
+  });
+}
+scrollToTop()
+
+   // JavaScript code for the counter
+var counter = document.getElementById("counter");
+if (localStorage.getItem("count")){
+    count=parseInt(localStorage.getItem("count"));
+}else{
+    count=0;
+}
+function updateCounter(){
+ count++;
+ counter.textContent=count;
+ localStorage.setItem("count",count);
+}
+updateCounter();
+
+// JavaScript code for animated Text
+const text=document.querySelector(".animated-text").children,
+textLen=text.length;
+let index=0;
+const textInTimer=3000,
+textOutTimer=2800;
+
+function animateText() {
+for(let i=0; i<textLen; i++){
+text[i].classList.remove("text-in","text-out");  
+}
+text[index].classList.add("text-in");
+
+setTimeout(function(){
+text[index].classList.add("text-out");              
+},textOutTimer)
+
+setTimeout(function(){
+if(index == textLen-1){
+    index=0;
+}
+else{
+ index++;
+}
+    animateText();
+},textInTimer); 
+}        
+window.onload=animateText;
+
+        // Hidden menu on home screen
+
+const menu = document.querySelector('.nav-menu');
+const openMenuBtn = document.querySelector('.open-menu-btn');
+const closeMenuBtn = document.querySelector('.close-menu-btn');
+
+[openMenuBtn, closeMenuBtn].forEach((btn) => {
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        menu.style.transition = "transform 0.5s ease";
+    });
+});
+
+// Toggle Search Bar
+const searchToggle = document.querySelector('.searchBox');
+searchToggle.addEventListener('click', () =>{
+    searchToggle.classList.toggle("active");
+})
+        // toggle menu button on banner
+function toggleMenu(){
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('.nav');
+    menu.classList.toggle('active');
+    nav.classList.toggle('active');
+}
+    
+// change the background video when click on the gallery images
+function changeVideo(name){
+    const bgVideoList = document.querySelectorAll('.bg-video');
+    const trailors = document.querySelectorAll('.trailer');
+    const models = document.querySelectorAll('.model');
+
+// javaScript higher order array function forEach
+// this is easier to do data mapping
+    bgVideoList.forEach(video => {
+        video.classList.remove('active');
+        if(video.classList.contains(name)){
+            video.classList.add('active')
+        }
+    });
+
+// mapping model name change
+    models.forEach(model => {
+        model.classList.remove('active');
+        if(model.classList.contains(name)){
+            model.classList.add('active')
+        }
+    });
+
+// mapping trailor video change
+    trailors.forEach(video => {
+    video.classList.remove('active');
+    if(video.classList.contains(name)){
+        video.classList.add('active')
+    }
+});
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+        // Get all anchor tags inside cards
+        const anchors = document.querySelectorAll('.cards a');
+        
+        console.log("Number of anchor tags found:", anchors.length); // Logging the number of anchor tags found
+        
+        // Loop through each anchor tag and update the href attribute
+        anchors.forEach(anchor => {
+            console.log("Updating href for:", anchor.textContent); // Logging the text content of the anchor tag
+            // Replace 'new_url_here' with your desired URL
+            anchor.setAttribute('href', '/bookingForm.html');
+            console.log("Updated href:", anchor.getAttribute('href')); // Logging the updated href attribute
+        });
+    });
+    //saba
+
+
+    const counterContainers = document.querySelectorAll('.counter-container');
+
+    // Intersection observer to start the counter animation when each container enters the viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const targetCount = parseInt(entry.target.dataset.targetCount);
+          const span = entry.target.querySelector('span');
+          let count = 0;
+          const duration = 2000; // Animation duration in milliseconds
+          const increment = Math.ceil(targetCount / (duration / 50)); // Calculate increment based on duration
+
+          function updateCounter() {
+            count += increment;
+            if (count >= targetCount) {
+              count = targetCount;
+              clearInterval(intervalId);
+            }
+            span.textContent = `${count.toLocaleString()} +`;
+          }
+
+          // Start updating the counter value
+          const intervalId = setInterval(updateCounter, 110); // Update counter every 50 milliseconds
+
+          // Delay the animation slightly for each counter container
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, 1000); // Delay animation start by 1000 milliseconds
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observe each counter container element
+    counterContainers.forEach(container => observer.observe(container));
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        once: true,
+        init: function () {
+          var paragraph = document.querySelector('.multiple-animations');
+          paragraph.style.opacity = '1';
+          paragraph.style.transform = 'translateY(0)'; /* Initial transform */
+          paragraph.style.animation = 'rotateAnimation 1s ease-in-out forwards'; /* Apply rotation animation */
+        }
+      });
+    });
+    function handleAnimation(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeAndRotate 2s forwards'; // Apply animation when in viewport
+        } else {
+          entry.target.style.animation = ''; // Remove animation when not in viewport
+        }
+      });
+    }
+
+    // Create a new Intersection Observer
+
+    //             // If you want transition effect, you can add 'fade', 'cube', 'coverflow',flip etc.
+    // //             effect: 'tilt',
+    // // tiltEffect: {
+    // //     slideShadows: true,
+    // //     maxRotation: 45,
+    // //     stretch: 0,
+    // //     depth: 300,
+    // //     scale: 0.6
+    // // },
+
+
+    function startSwiperCoverflow(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !swiperAutoplayStarted) {
+          swiper.autoplay.start(); // Start Swiper autoplay
+          swiper.slideNext(); // Move to the next slide to trigger the coverflow effect
+          swiperAutoplayStarted = true; // Set flag to indicate autoplay has started
+        } else if (!entry.isIntersecting && swiperAutoplayStarted) {
+          swiper.autoplay.stop(); // Stop Swiper autoplay if it's out of view
+        }
+      });
+    }
+
+    // Target the swiper container
+    const swiperContainer = document.querySelector('.mySwiper');
+
+    // Create an intersection observer to monitor the swiper container
+    const bserver = new IntersectionObserver(startSwiperCoverflow);
+    bserver.observe(swiperContainer);
+
+    // Initialize Swiper with coverflow effect
+    let swiperAutoplayStarted = false; // Flag to track if autoplay has started
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+      loop: true,
+      autoplay: false, // Disable autoplay initially
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true
+      },
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      speed: 1000,
+      easing: "ease-in-out",
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    function handleImageClick(event) {
+      document.getElementById("NewsLetter").style.marginTop="10rem";
+      // Get the coordinates of the click relative to the image
+      var image = event.target;
+      var boundingRect = image.getBoundingClientRect();
+      var offsetX = event.clientX - boundingRect.left;
+      var offsetY = event.clientY - boundingRect.top;
+
+      // Define the coordinates of the specific part of the image you want to target
+      var targetWidth = 100; // Change this to the width of your target area
+      var targetHeight = 100; // Change this to the height of your target area
+
+      // Calculate targetX and targetY
+      var targetX = boundingRect.width - targetWidth - 90; // 20 pixels from the right
+      var targetY = 80; // 20 pixels from the top
+
+      // Check if the click coordinates are within the target area
+      if (offsetX >= targetX && offsetX <= targetX + targetWidth && offsetY >= targetY && offsetY <= targetY + targetHeight) {
+        // If the click is within the target area, perform your desired action
+        document.getElementById("image-container").style.display = "none"
+        document.getElementById("NewsLetter").style.marginTop="10rem";
+        // Add your custom action here
+      }
+     
+    }
+
+
+
+    //Subscribing JS
+    document.getElementById("form").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const input = document.getElementById("input").value;
+      alert(`Hi ${input}!
+Thanks For Subscribing.`)
+      const resultDiv = document.getElementById('resultDiv');
+      resultDiv.innerHTML = `
+  <p>Thanks For Subscribing! </p>`;
+      let change = document.getElementById("form")
+      change.style.display = "none";
+      document.getElementById("newsletter").style.marginBottom="20rem"
+
+    });
+
+    //JS For Continuous Scrolling Ticker
+    function getCurrentDateTime() {
+      const now = new Date();
+      return `${now.toLocaleDateString()} | ${now.toLocaleTimeString()}`;
+    }
+    // Function to get current location
+    function getCurrentLocation() {
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`)
+          .then(response => response.json())
+          .then(data => {
+            const address = data.display_name || 'Unknown Location';
+            document.getElementById('tickerContent').innerText = `${getCurrentDateTime()} | Location: D-4, Block H, North Nazimabad, Karachi`;
+          })
+          .catch(error => {
+            console.error('Error fetching location:', error);
+          });
+      }, error => {
+        console.error('Error fetching location:', error);
+      });
+    }
+
+
+    // Initial call to get current date, time, and location
+    getCurrentLocation();
+
+    // Update location every minute
+    setInterval(getCurrentLocation, 60000);
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

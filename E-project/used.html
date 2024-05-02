@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta tags for responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- titte name and favicon icon  for website -->
+  <title>Car Breezy&nbsp;&nbsp;|&nbsp;&nbsp;Your Journey Our Passion</title>
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <!-- - google font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Didact+Gothic&family=Francois+One&family=Gothic+A1:wght@900&family=Lobster+Two&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap"
+    rel="stylesheet">
+  <!-- - material icon font-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+  <!-- CDN links for additional functions in website -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!--  - custom css link-->
+  <link rel="stylesheet" href="index2.css">
+  <link rel="stylesheet" href="/category.css">
+  <link rel="stylesheet" href="/index1.css">
+<style>
+  input[type=radio]{
+      display: block;
+  }
+  /* Apply scrollbar styles to body */
+        .animated-text{
+            position: absolute;
+            top: .75em;
+        }
+  
+body {
+  scrollbar-width: thin; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: hsl(0, 0%, 98%);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 80%);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 70%);
+}
+
+/* Reset scrollbar styles for the filter */
+.filter::-webkit-scrollbar {
+  width: 10px;
+}
+
+.filter::-webkit-scrollbar-track {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.filter::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.filter::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 70%);
+}
+
+/* Ensure scrollbar buttons are visible for the filter */
+.filter::-webkit-scrollbar-button {
+  display: block;
+}
+/* CSS for styling the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0a85a3; /* Background color */
+    color: hsl(222, 44%, 14%); /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease forwards, slideIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Animations for opening */
+    overflow-x: hidden;
+}
+/* CSS for closing animation of the popup */
+@keyframes fadeOutAndShrink {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+}
+
+.popup.closing {
+    animation: fadeOutAndShrink 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -150%); }
+    to { transform: translate(-50%, -50%); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: hsl(222, 44%, 14%);
+    color: aliceblue;
+    font-weight: bolder;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    z-index: 1200;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 30px;
+    background-color: #0a85a3;
+}
+
+.tab-button {
+    padding-right: 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: hsl(222, 44%, 14%);
+    font-weight: bolder;
+}
+
+.tab-button.active {
+    background-color: hsl(222, 44%, 14%);
+    color: aliceblue;
+}
+
+.tab-content {
+    line-height: 40px;
+    display: none;
+    padding: 10px;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+.tab-content h3{
+    color: hsl(222, 44%, 14%);
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.tab-content.active {
+    display: block;
+}
+body{
+  overflow-x: hidden;
+}
+/* CSS for image titles */
+.image-title {
+    text-align: center; /* Center the title text */
+    margin-top: 8px; /* Adjust the top margin as needed */
+}
+/* CSS for grid layout */
+.car-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row {
+    width: 100%; /* Take full width of container */
+    display: flex;
+    justify-content: space-between; /* Space between images */
+    margin-bottom: 20px; /* Adjust margin between rows */
+}
+
+.car-image {
+    flex: 0 0 48%; /* Adjust width to fit two images with a small gap */
+    position: relative; /* Position for title */
+}
+
+.image-title {
+    text-align: center; /* Center the title text */
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 80px; /* Center horizontally */
+    width: 40%; /* Take full width of container */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* Title text color */
+    padding: 5px 0; /* Adjust padding as needed */
+}
+  </style>
+</head>
+
+<body>
+  <div id="checkerarrow">
+     <div class="upper">
+        <div class="visitor-counter">
+            <a href="#">
+            <i class="ri-group-fill"></i>
+            <div class="counter" id="counter">0</div>
+            <p class="counter-p">USERS CONNECTED</p>
+            </a>
+        </div>
+        <section class="home">
+            <div class="home-text">
+                <div class="txt">
+                  <p class="animated-text">
+                    <span> <a href="#">Stay informed with the latest updates and offers!</a></span>
+                    <span> <a href="#">For inquiries, call us at : +92 956320765</a></span>
+                  </p> 
+                </div>
+            </div>
+        </section>
+        <div class="logIn-register">
+            <div class="logIn">
+                <a href="/login.html">
+                    <i class="fas fa-lock"></i>
+                    Log in</a> 
+            </div>
+            <div class="register">
+                <a href="/register.html">
+                    <i class="fas fa-user"></i>
+                    Register</a>
+            </div>
+        </div>
+    </div>
+    <div class="conatainer">
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+                <nav class="nav-menu">
+                    <div class="head">
+                        <div class="logo"><img src="logo.png" alt="logo"></div>
+                        <button type="button" class="close-menu-btn"></button>
+                    </div>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/blog.html">Blogs</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="active">Categories</a>
+                            <i class="fa-solid fa-chevron-down dropdownBtn"></i>
+                            <ul class="sub-menu">
+                                <li><a href="/top trending category.html"><span>Top Trending</span></a></li>
+                                <li><a href="/new.html"><span>New Cars</span></a></li>
+                                <li><a href="/used.html"><span>Used Cars</span></a></li>
+                    
+                                <li><a href="/offer.html" style="margin-right: 40px;"><span>Offers</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index2.html">Accessories</a></li>
+                        <li><a href="/about us.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="#">Contact</a>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <ul class="sub-menu">
+                                <li><a href="#"><span>Phone</span></a></li>
+                                <li><a href="#"><span>E-mail</span></a></li>
+                                <li><a href="#"><span>Customer Support</span></a></li>
+                                <li><a href="#"><span>Inquiries</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <a href="index2.html">
+                    <div  class="icon-cart">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                    </div>
+                </a>
+                    <div class="search-box">
+                        <div class="searchBox">
+                            <i class="bx bx-x cancel"></i>
+                            <i class="bx bx-search search"></i>
+                        </div>    
+                        <div class="search-field">
+                            <input type="text" placeholder="Search...">
+                            <i class="bx bx-search"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="open-menu-btn">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                        <span class="line line-3"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+          <!-- <div id="contentTab"></div> -->
+    </div>
+    
+
+  </div>
+  <!-- saba -->
+    <!-- Popup for car details -->
+    <div class="popup" id="car-popup">
+      <span class="close-btn" id="close-popup"><i class='bx bx-x' style="color: aliceblue; font-size: 3rem; position: relative; left: 5px; top: 3.2px;"></i></span>
+      <div class="tabs">
+          <button class="tab-button active" data-tab="info">Gallery</button> <!-- New Info Tab Button -->
+          <button class="tab-button " data-tab="internal">Internal Specifications</button>
+          <button class="tab-button" data-tab="external">External Details</button>
+          <button class="tab-button" data-tab="engine">Engine Details</button>
+          <button class="tab-button" data-tab="dimensions">Dimensions</button>
+        
+      </div>
+      <div id="internal" class="tab-content ">
+          <h3>Internal Specifications</h3>
+          <ul>
+              <li>Interior Material: Premium Nappa Leather</li>
+              <li>Seating Capacity: 4</li>
+              <li>Infotainment System: 12.3-inch Touchscreen Display with Navigation</li>
+              <li>Sound System: Bose® Panaray® 34-Speaker Sound System</li>
+              <li>Climate Control: Tri-Zone Automatic Climate Control</li>
+              <li>Driver Assistance: Adaptive Cruise Control, Lane Keep Assist, Blind Spot Monitoring</li>
+          </ul>
+      </div>
+      <div id="external" class="tab-content">
+          <h3>External Details</h3>
+          <ul>
+              <li>Exterior Finish: Metallic Paint with Ceramic Coating</li>
+              <li>Body Style: Coupe</li>
+              <li>Wheels: 20-inch Forged Alloy Wheels</li>
+              <li>Lighting: Full LED Headlights with Adaptive Lighting</li>
+              <li>Roof: Power Tilt and Slide Panoramic Sunroof</li>
+              <li>Exterior Features: Power-Operated Trunk Lid, Automatic Parking System</li>
+              <li>
+                 
+                  <img src="/newcar2.png" alt="">
+              </li>
+          </ul>
+      </div>
+      <div id="engine" class="tab-content">
+          <h3>Engine Details</h3>
+          <ul>
+              <li>Engine Type: Twin-Turbocharged V8</li>
+              <li>Displacement: 4.0 Liters</li>
+              <li>Horsepower: 600 hp</li>
+              <li>Torque: 590 lb-ft</li>
+              <li>Acceleration (0-60 mph): 3.5 seconds</li>
+              <li>Top Speed: 200 mph</li>
+          </ul>
+      </div>
+      <div id="dimensions" class="tab-content">
+          <h3>Dimensions</h3>
+          <ul>
+              <li>Length: 188.9 inches</li>
+              <li>Width: 76.9 inches</li>
+              <li>Height: 54.2 inches</li>
+              <li>Wheelbase: 112.4 inches</li>
+              <li>Curb Weight: 4,400 lbs</li>
+              <li>Ground Clearance: 5.1 inches</li>
+          </ul>
+      </div>
+      <!-- New Info Tab Content -->
+     <!-- New Info Tab Content -->
+    <div id="info" class="tab-content active">
+     
+      <div class="car-images-container">
+          <div class="car-image">
+              <img src="image1.jpg" alt="Image 1">
+          </div>
+          <div class="car-image">
+              <img src="image2.jpg" alt="Image 2">
+          </div>
+          <div class="car-image">
+              <img src="image3.jpg" alt="Image 3">
+          </div>
+          <div class="car-image">
+              <img src="image4.jpg" alt="Image 4">
+          </div>
+          <div class="car-image">
+              <img src="image5.jpg" alt="Image 5">
+          </div>
+          <div class="car-image">
+              <img src="image6.jpg" alt="Image 6">
+          </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const carList = document.querySelectorAll('.image');
+        const popup = document.getElementById('car-popup');
+        const closeButton = document.getElementById('close-popup');
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+    
+        carList.forEach(car => {
+            car.addEventListener('click', function() {
+                // Show popup with animation
+                popup.style.display = 'block';
+                setTimeout(() => {
+                    popup.style.opacity = '1';
+                }, 50);
+    
+                // Update tab contents with car details
+                tabContents.forEach(content => {
+                    switch (content.id) {
+                        case 'internal':
+                            content.innerHTML = `
+                                <h3>Internal Specifications</h3>
+                                <ul>
+                                    <li>Interior Material: Premium Nappa Leather</li>
+                                    <li>Seating Capacity: 4</li>
+                                    <li>Infotainment System: 12.3-inch Touchscreen Display with Navigation</li>
+                                    <li>Sound System: Bose® Panaray® 34-Speaker Sound System</li>
+                                    <li>Climate Control: Tri-Zone Automatic Climate Control</li>
+                                    <li>Driver Assistance: Adaptive Cruise Control, Lane Keep Assist, Blind Spot Monitoring</li>
+                                </ul>
+                            `;
+                            break;
+                        case 'external':
+                            content.innerHTML = `
+                                <h3>External Details</h3>
+                                <ul>
+                                    <li>Exterior Finish: Metallic Paint with Ceramic Coating</li>
+                                    <li>Body Style: Coupe</li>
+                                    <li>Wheels: 20-inch Forged Alloy Wheels</li>
+                                    <li>Lighting: Full LED Headlights with Adaptive Lighting</li>
+                                    <li>Roof: Power Tilt and Slide Panoramic Sunroof</li>
+                                    <li>Exterior Features: Power-Operated Trunk Lid, Automatic Parking System</li>
+                                </ul>
+                            `;
+                            break;
+                        case 'engine':
+                            content.innerHTML = `
+                                <h3>Engine Details</h3>
+                                <ul>
+                                    <li>Engine Type: Twin-Turbocharged V8</li>
+                                    <li>Displacement: 4.0 Liters</li>
+                                    <li>Horsepower: 600 hp</li>
+                                    <li>Torque: 590 lb-ft</li>
+                                    <li>Acceleration (0-60 mph): 3.5 seconds</li>
+                                    <li>Top Speed: 200 mph</li>
+                                </ul>
+                            `;
+                            break;
+                        case 'dimensions':
+                            content.innerHTML = `
+                                <h3>Dimensions</h3>
+                                <ul>
+                                    <li>Length: 188.9 inches</li>
+                                    <li>Width: 76.9 inches</li>
+                                    <li>Height: 54.2 inches</li>
+                                    <li>Wheelbase: 112.4 inches</li>
+                                    <li>Curb Weight: 4,400 lbs</li>
+                                    <li>Ground Clearance: 5.1 inches</li>
+                                </ul>
+                            `;
+                            break;
+                            case 'info': // Updated for the Info tab
+        content.innerHTML = `
+            <h3>Cars Images With prices</h3>
+            <div class="car-images-container">
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/new car1.png" alt="Image 1"> <!-- Change this path -->
+                        <div class="image-title">$40,000 USD</div> <!-- Title for Image 1 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/convertibles1.png" alt="Image 2"> <!-- Change this path -->
+                        <div class="image-title">$55,000 USD</div> <!-- Title for Image 2 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/Bugatti Bolide.png" alt="Image 3"> <!-- Change this path -->
+                        <div class="image-title">$78,000 USD</div> <!-- Title for Image 3 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/newcar6.png" alt="Image 4"> <!-- Change this path -->
+                        <div class="image-title">$62,000 USD</div> <!-- Title for Image 4 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="car-image">
+                        <img src="/offer..png" alt="Image 5"> <!-- Change this path -->
+                        <div class="image-title">$90,000 USD</div> <!-- Title for Image 5 -->
+                    </div>
+                    <div class="car-image">
+                        <img src="/suv2.png"  alt="Image 6"> <!-- Change this path -->
+                        <div class="image-title">$67,000 USD</div> <!-- Title for Image 6 -->
+                    </div>
+                </div>
+            </div>
+        `;
+        break;
+    
+                    }
+                });
+            });
+        });
+    
+        closeButton.addEventListener('click', function() {
+            // Hide popup with animation
+            popup.style.opacity = '0';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+        });
+    
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+                tabContents.forEach(content => {
+                    if (content.id === targetTab) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+    </script>
+  <div class="scrollingtop" style="display: block;">
+    <i class='bx bx-up-arrow-alt' id="scrollToTopBtn"></i>
+  </div>
+  </div>
+  <script>
+    // Show the scroll-to-top button when the user scrolls down past the banner
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      var bannerHeight = document.getElementById("checkerarrow").offsetHeight; // Adjust "banner" to the ID of your banner element
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+      if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+
+      var bannerTop = document.getElementById("banner").getBoundingClientRect().top;
+      if (bannerTop >= 0) {
+        scrollToTopBtn.style.display = "none";
+      }
+    }
+    // Smooth scroll to top when the user clicks on the button
+    document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+      scrollToTop(2000); // Adjust the duration (in milliseconds) for slower scrolling
+    });
+
+    // Easing function for smooth scrolling
+    function easeInOutQuad(t, b, c, d) {
+      t /= d;
+      if (t < 0.5) return 2 * t * t * c + b;
+      else return -1 + (4 - 2 * t) * t * c + b;
+    }
+
+    function scrollToTop(duration) {
+      const start = window.pageYOffset;
+      const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+      function scroll() {
+        const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const timeElapsed = currentTime - startTime;
+        window.scrollTo(0, easeInOutQuad(timeElapsed, start, -start, duration));
+        if (timeElapsed < duration) requestAnimationFrame(scroll);
+      }
+
+      requestAnimationFrame(scroll);
+    }
+
+  </script>
+ 
+
+  <!-- product page session start -->
+
+    <!-- filter starts -->
+    <div class="class">
+      <div id="filterBox" class="filterBox1">
+          <h1 style="font-size: 4rem;">Filter</h1>
+          <hr style="margin-bottom: 3rem;">
+        
+          <div class="filter-section">
+            <h3>Body Types</h3>
+       
+            <label><input type="radio" name="filter" id="hatchbackclick">HatchBacks</label>
+            <label><input type="radio" name="filter" id="sedanclick">Sedan</label>
+            <label><input type="radio" name="filter" id="suvclick">SUV</label>
+            <label><input type="radio" name="filter" id="convertibleclick">Convertibles</label>
+          </div>
+          <hr>
+          <div class="filter-section">
+            <h3>Pricing Range</h3>
+          
+            <label><input type="radio" name="filter" id="lowclick">Low Price Cars</label>
+            <label><input type="radio" name="filter" id="mediumclick">Budget Friendly Cars</label>
+            <label><input type="radio" name="filter" id="highclick">Luxury Cars</label>
+           
+          </div>
+          <hr>
+         
+          
+        
+          <button id="clearfilters" style="font-size: 25px; margin-top: 3rem; color: gray; font-weight: bolder;">Clear Filters</button>
+        </div>
+      </div>
+    
+      <!-- Filter Ends -->
+      <section class="productCard">
+        <div class="class">
+          <div class="filterBox2" id="filterBox2">
+              <h1 style="font-size: 4rem;">Filter</h1>
+              <hr style="margin-bottom: 3rem;">
+            
+              <div class="filter-section">
+                <h3>Body Types</h3>
+           
+                <label><input type="radio" name="filter" id="click1" onclick="clicks1()">HatchBacks</label>
+                <label><input type="radio" name="filter" id="sedanclick" onclick="clicks2()">Sedan</label>
+                <label><input type="radio" name="filter" id="suvclick" onclick="clicks3()">SUV</label>
+                <label><input type="radio" name="filter" id="convertibleclick" onclick="clicks4()">Convertibles</label>
+              </div>
+              <hr>
+              <div class="filter-section">
+                <h3>Pricing Range</h3>
+              
+                <label><input type="radio" name="filter" id="lowclick" onclick="clicks5()">Low Price Cars</label>
+                <label><input type="radio" name="filter" id="mediumclick" onclick="clicks6()">Budget Friendly Cars</label>
+                <label><input type="radio" name="filter" id="highclick"  onclick="clicks7()">Luxury Cars</label>
+               
+              </div>
+              <hr>
+              <button id="clearfilters" onclick="clicks8()" style="font-size: 25px; margin-top: 3rem; color: gray; font-weight: bolder;">Clear Filters</button>
+            </div>
+          </div>
+              <script>
+                 function clicks1(){
+         $("#hatchback").show();
+    $("#toptrending , #sedan, #suv,#convertibles,#low, #medium,#high").hide();
+   
+  };
+  function clicks2(){
+         $("#sedan").show();
+    $("#toptrending , ##hatchback, #suv,#convertibles,#low, #medium,#high").hide();
+   
+  };
+  function clicks3(){
+         $("#suv").show();
+    $("#toptrending , #sedan, #hatchback,#convertibles,#low, #medium,#high").hide();
+   
+  };
+  function clicks4(){
+         $("#convertible").show();
+    $("#toptrending , #sedan, #suv,#hatchback,#low, #medium,#high").hide();
+   };
+   function clicks5(){
+         $("#low").show();
+    $("#toptrending , #sedan, #suv,#hatchback,#convertible, #medium,#high").hide();
+   };
+   function clicks6(){
+         $("#medium").show();
+    $("#toptrending , #sedan, #suv,#hatchback,#convertible, #low,#high").hide();
+   };
+   function clicks7(){
+         $("#high").show();
+    $("#toptrending , #sedan, #suv,#hatchback,#convertible, #medium,#low").hide();
+   };
+   function clicks8(){
+         $("#toptrending").show();
+    $("#low , #sedan, #suv,#hatchback,#convertible, #medium,#high").hide();
+   };
+              </script>
+            
+              <button id="clearfilters" style="font-size: 25px; margin-top: 3rem; color: gray; font-weight: bolder;">Clear Filters</button>
+            </div>
+          </div>
+      </section>
+      <section class="productCard" id="toptrending">
+
+        
+    <h3><i class="bx bx-car"></i> Used Cars</h3>
+    <div class="card-container">
+
+      <script>
+        function changeicon(clickedIcon) {
+          clickedIcon.classList.toggle('bx-heart');
+          clickedIcon.classList.toggle('bxs-heart');
+        }
+
+        function showicon(card) {
+          var icon = card.querySelector('.circle-icon');
+          icon.style.display = "block";
+        }
+
+        function hidecon(cards) {
+          var icon = card.querySelector('.circle-icon');
+
+          icon.style.display = "none";
+        }
+
+      </script>
+
+
+
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/12.png" alt="">
+
+  </div>
+  <h5>Toyota Highlander
+  </h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.5k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2015</span>
+      <span><i class="bx bx-target-lock"></i>Manual</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $30,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar2.png" alt="">
+
+  </div>
+  <h5>Audi A4</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>12-14 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2018</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $40,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar3.png" alt="">
+
+  </div>
+  <h5> Honda HR-V</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2016 </span>
+      <span><i class="bx bx-target-lock"></i>Subcompact SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $20,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar4.png" alt="">
+
+  </div>
+  <h5>Tesla Model S</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4.1K Reviews Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>4-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2014 </span>
+      <span><i class="bx bx-target-lock"></i>Electric Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $32,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar5.png" alt="">
+
+  </div>
+  <h5>Ford Ranger Tremor</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>Hybird</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $40,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar6.png" alt="">
+
+  </div>
+  <h5> Lexus RX</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.2K  Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>8-9 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019 </span>
+      <span><i class="bx bx-target-lock"></i>Electric SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $42,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+
+      <div class="cards" id="show1">
+        <div class="image">
+          <img src="/01.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Toyota QR</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>6.9K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>6-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2019</span>
+            <span><i class="bx bx-target-lock"></i>SUV</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost"> $55,000 USD </div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards" id="show2">
+        <div class="image">
+          <img src="/06.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Audi S9</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>5.9K Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i> Automatic</span>
+            <span><i class="bx bx-label"></i>5-6 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2018</span>
+            <span><i class="bx bx-target-lock"></i>PHEV </span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$200,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <div class="cards" id="show3">
+        <div class="image">
+          <img src="/11.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+          <div class="circle-icon" id="circle-icon">
+            <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+              onclick="changeicon(this)"></i><br>
+            <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+          </div>
+        </div>
+
+        <h5>Telsa XE</h5>
+
+        <div class="stars" style="display: flex;">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <span>5.2k Reviews</span>
+        </div>
+        <hr>
+        <div class="features">
+          <div class="feature1">
+            <span><i class="bx bx-error-circle"></i>Automatic</span>
+            <span><i class="bx bx-label"></i>7-8 km/l</span>
+          </div>
+          <div class="feature2">
+            <span><i class="bx bx-car"></i>Model 2023</span>
+            <span><i class="bx bx-target-lock"></i>Hybird</span>
+          </div>
+        </div>
+        <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+          <div class="cost">$37,000 USD</div>
+          <button><a href="#">Book Now</a></button>
+        </div>
+
+      </div>
+      <button onclick="changelength()" class="showMore">Show More<i class='bx bx-chevron-down' style="color: aliceblue; font-weight: bolder;"></i></button>
+    </div>
+
+</section>
+<section class="productCard" id="hatchback">
+  <h3><i class="bx bx-car"></i> Hatchbacks Cars</h3>
+<div class="card-container">
+ <div class="cards">
+   <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+     <div class="circle-icon" id="circle-icon">
+       <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+         onclick="changeicon(this)"></i><br>
+       <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+     </div>
+     <img src="/hatchback1.png" alt="">
+
+   </div>
+   <h5>McLaren 765LT</h5>
+   <div class="stars" style="display: flex;">
+     <i class="bx bxs-star"></i>
+     <i class="bx bxs-star"></i>
+     <i class="bx bxs-star"></i>
+     <i class="bx bxs-star"></i>
+     <i class="bx bxs-star-half"></i>
+     <span>12K Reviews</span>
+   </div>
+   <hr>
+   <div class="features">
+     <div class="feature1">
+       <span><i class="bx bx-error-circle"></i>Automatic</span>
+       <span><i class="bx bx-label"></i>14-15 km/l</span>
+     </div>
+     <div class="feature2">
+       <span><i class="bx bx-car"></i> Model 2022</span>
+       <span><i class="bx bx-target-lock"></i>Hatchback</span>
+     </div>
+   </div>
+   <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+     <div class="cost"> $358,000 USD </div>
+     <button><a href="#">Book Now</a></button>
+   </div>
+</div>
+<div class="cards">
+ <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+   <div class="circle-icon" id="circle-icon">
+     <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+       onclick="changeicon(this)"></i><br>
+     <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+   </div>
+   <img src="/hatchback2.png" alt="">
+
+ </div>
+ <h5> Lamborghini Huracán EVO.</h5>
+ <div class="stars" style="display: flex;">
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star-half"></i>
+   <span>15K Reviews</span>
+ </div>
+ <hr>
+ <div class="features">
+   <div class="feature1">
+     <span><i class="bx bx-error-circle"></i>Automatic</span>
+     <span><i class="bx bx-label"></i>9-10 km/l</span>
+   </div>
+   <div class="feature2">
+     <span><i class="bx bx-car"></i> Model 2019</span>
+     <span><i class="bx bx-target-lock"></i>Hatchback</span>
+   </div>
+ </div>
+ <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+   <div class="cost">  $261,000 USD</div>
+   <button><a href="#">Book Now</a></button>
+ </div>
+</div>
+<div class="cards">
+ <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+   <div class="circle-icon" id="circle-icon">
+     <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+       onclick="changeicon(this)"></i><br>
+     <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+   </div>
+   <img src="/hatchback3.png" alt="">
+
+ </div>
+ <h5> Mercedes-AMG GT 4-Door Coupe</h5>
+ <div class="stars" style="display: flex;">
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star-half"></i>
+   <span>14K Reviews</span>
+ </div>
+ <hr>
+ <div class="features">
+   <div class="feature1">
+     <span><i class="bx bx-error-circle"></i>Automatic</span>
+     <span><i class="bx bx-label"></i>10-12 km/l</span>
+   </div>
+   <div class="feature2">
+     <span><i class="bx bx-car"></i> Model 2020</span>
+     <span><i class="bx bx-target-lock"></i>  Hatchback</span>
+   </div>
+ </div>
+ <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+   <div class="cost">$200,000 USD </div>
+   <button><a href="#">Book Now</a></button>
+ </div>
+</div>
+<div class="cards">
+ <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+   <div class="circle-icon" id="circle-icon">
+     <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+       onclick="changeicon(this)"></i><br>
+     <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+   </div>
+   <img src="/hatchback4.png" alt="">
+
+ </div>
+ <h5>BMW M3</h5>
+ <div class="stars" style="display: flex;">
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star-half"></i>
+   <span>10K Reviews</span>
+ </div>
+ <hr>
+ <div class="features">
+   <div class="feature1">
+     <span><i class="bx bx-error-circle"></i>Automatic</span>
+     <span><i class="bx bx-label"></i>7-9 km/l</span>
+   </div>
+   <div class="feature2">
+     <span><i class="bx bx-car"></i> Model 2021</span>
+     <span><i class="bx bx-target-lock"></i>Hatchback</span>
+   </div>
+ </div>
+ <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+   <div class="cost">$200,000 USD </div>
+   <button><a href="#">Book Now</a></button>
+ </div>
+</div>
+<div class="cards">
+ <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+   <div class="circle-icon" id="circle-icon">
+     <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+       onclick="changeicon(this)"></i><br>
+     <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+   </div>
+   <img src="/hatchbacxk5.png" alt="">
+
+ </div>
+ <h5> Ford F-150 Tremor</h5>
+ <div class="stars" style="display: flex;">
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star-half"></i>
+   <span>8.6K Reviews</span>
+ </div>
+ <hr>
+ <div class="features">
+   <div class="feature1">
+     <span><i class="bx bx-error-circle"></i>Automatic</span>
+     <span><i class="bx bx-label"></i>8-10 km/l</span>
+   </div>
+   <div class="feature2">
+     <span><i class="bx bx-car"></i> Model 2021</span>
+     <span><i class="bx bx-target-lock"></i>Hatchback</span>
+   </div>
+ </div>
+ <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+   <div class="cost">  $65,000 USD</div>
+   <button><a href="#">Book Now</a></button>
+ </div>
+</div>
+<div class="cards">
+ <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+   <div class="circle-icon" id="circle-icon">
+     <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+       onclick="changeicon(this)"></i><br>
+     <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+   </div>
+   <img src="/hatchback6.png" alt="">
+
+ </div>
+ <h5>Tesla Model Y</h5>
+ <div class="stars" style="display: flex;">
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star"></i>
+   <i class="bx bxs-star-half"></i>
+   <span>7.2K Reviews</span>
+ </div>
+ <hr>
+ <div class="features">
+   <div class="feature1">
+     <span><i class="bx bx-error-circle"></i>Automatic</span>
+     <span><i class="bx bx-label"></i>6-8 km/l</span>
+   </div>
+   <div class="feature2">
+     <span><i class="bx bx-car"></i> Model 2022 </span>
+     <span><i class="bx bx-target-lock"></i>Hatchback</span>
+   </div>
+ </div>
+ <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+   <div class="cost">  $60,000 USD</div>
+   <button><a href="#">Book Now</a></button>
+ </div>
+</div>
+</div>
+</section>
+
+
+<section class="productCard" id="sedan">
+        
+  <h3><i class="bx bx-car"></i> Sedan Cars</h3>
+  <div class="card-container">
+<div class="cards">
+
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/sedan1.png" alt="">
+
+  </div>
+  <h5>McLaren 720S</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.2k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>9-10 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2022 </span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$280,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+
+<div class="cards">
+  <div class="image">
+    <img src="/sedan2.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+  </div>
+
+  <h5>Mercedes-AMG GT</h5>
+
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.7k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2020</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$115,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image">
+    <img src="/sedan3.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+    </div>
+  </div>
+
+  <h5>Lamborghini Huracán</h5>
+
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>7K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>8-9 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2023</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$200,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+
+<div class="cards">
+  <div class="image">
+    <img src="/sedan4.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+    </div>
+  </div>
+
+  <h5>Toyota Land Cruiser Prado</h5>
+
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2019</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $55,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image">
+    <img src="/sedan5.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+    </div>
+  </div>
+
+  <h5>Audi R8</h5>
+
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i> Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2018</span>
+      <span><i class="bx bx-target-lock"></i>Sedan </span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$200,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image">
+    <img src="/sedan6.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+    </div>
+  </div>
+
+  <h5>Honda Accord Hybrid</h5>
+
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.2k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2023</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$37,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+</div>
+</section>
+
+<section class="productCard" id="suv">
+        
+  <h3><i class="bx bx-car"></i> SUV Cars</h3>
+  <div class="card-container">
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv1.png" alt="">
+
+  </div>
+  <h5>Tesla Model 3</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>7.8k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2020 </span>
+      <span><i class="bx bx-target-lock"></i> SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$60,000 USD  </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv2.png" alt="">
+
+  </div>
+  <h5>Honda CR-V</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>8.1k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$35,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv3.png" alt="" style="width:50vh;" height="200vh">
+
+  </div>
+  <h5>Audi Q5</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.6k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-10 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$55,000 USDD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv4.png" alt="">
+
+  </div>
+  <h5>Ford F-150</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>10-11 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2021 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $70,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv5.png" alt="">
+
+  </div>
+  <h5>BMW 3 Series</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>10k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>9-12 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2022</span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$50,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/sedan6.png" alt="">
+
+  </div>
+  <h5>Toyota RAV4</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019</span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$36,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+</div>
+</section>
+
+<section class="productCard" id="convertible">
+        
+  <h3><i class="bx bx-car"></i> Convertibles Cars</h3>
+  <div class="card-container">
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles1.png" alt="">
+
+  </div>
+  <h5>Toyota Highlander
+  </h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.5k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2015</span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $300,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles2.png" alt="">
+
+  </div>
+  <h5>Audi A4</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>12-14 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2018</span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $40,0000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles3.png" alt="">
+
+  </div>
+  <h5> Honda HR-V</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2016 </span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $200,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles4.png" alt="">
+
+  </div>
+  <h5>Tesla Model S</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4.1K Reviews Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>4-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2014 </span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $32,0000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles5.png" alt="">
+
+  </div>
+  <h5>Ford Ranger Tremor</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $400,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/convertibles6.png" alt="">
+
+  </div>
+  <h5> Lexus RX</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.2K  Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>8-9 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019 </span>
+      <span><i class="bx bx-target-lock"></i>Convertibles</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $42,0000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+
+</div>
+</section>
+
+
+<section class="productCard" id="medium">
+        
+  <h3><i class="bx bx-car"></i> Budget Friendly  Cars</h3>
+  <div class="card-container">
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/12.png" alt="">
+
+  </div>
+  <h5>Toyota Highlander
+  </h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.5k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2015</span>
+      <span><i class="bx bx-target-lock"></i>Manual</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $50,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar2.png" alt="">
+
+  </div>
+  <h5>Audi A4</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5.9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>12-14 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2018</span>
+      <span><i class="bx bx-target-lock"></i>Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $70,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar3.png" alt="">
+
+  </div>
+  <h5> Honda HR-V</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2016 </span>
+      <span><i class="bx bx-target-lock"></i>Subcompact SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $65,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar4.png" alt="">
+
+  </div>
+  <h5>Tesla Model S</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>4.1K Reviews Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>4-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2014 </span>
+      <span><i class="bx bx-target-lock"></i>Electric Sedan</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">  $82,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/offer3.png" alt="">
+
+  </div>
+  <h5>Ford Ranger Tremor</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>5K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-7 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>Hybird</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $78,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/usedcar6.png" alt="">
+
+  </div>
+  <h5> Lexus RX</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.2K  Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>8-9 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019 </span>
+      <span><i class="bx bx-target-lock"></i>Electric SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $89,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section class="productCard" id="low">
+        
+  <h3><i class="bx bx-car"></i> Low Price Cars</h3>
+  <div class="card-container">
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/sedan5.png" alt="">
+
+  </div>
+  <h5>Tesla Model 3</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>7.8k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>5-6 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2020 </span>
+      <span><i class="bx bx-target-lock"></i> SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$40,000 USD  </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/offer,.png" alt="">
+
+  </div>
+  <h5>Honda CR-V</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>8.1k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$35,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/offer2.png" alt="" style="width:50vh;" height="200vh">
+
+  </div>
+  <h5>Audi Q5</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6.6k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>7-10 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2017 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$50,000 USDD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv4.png" alt="">
+
+  </div>
+  <h5>Ford F-150</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>9K Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>10-11 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i>Model 2021 </span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost"> $30,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/suv5.png" alt="">
+
+  </div>
+  <h5>BMW 3 Series</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>10k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>9-12 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2022</span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$45,000 USD</div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+<div class="cards">
+  <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+    <div class="circle-icon" id="circle-icon">
+      <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+        onclick="changeicon(this)"></i><br>
+      <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+    </div>
+    <img src="/sedan6.png" alt="">
+
+  </div>
+  <h5>Toyota RAV4</h5>
+  <div class="stars" style="display: flex;">
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star"></i>
+    <i class="bx bxs-star-half"></i>
+    <span>6k Reviews</span>
+  </div>
+  <hr>
+  <div class="features">
+    <div class="feature1">
+      <span><i class="bx bx-error-circle"></i>Automatic</span>
+      <span><i class="bx bx-label"></i>6-8 km/l</span>
+    </div>
+    <div class="feature2">
+      <span><i class="bx bx-car"></i> Model 2019</span>
+      <span><i class="bx bx-target-lock"></i>SUV</span>
+    </div>
+  </div>
+  <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+    <div class="cost">$36,000 USD </div>
+    <button><a href="#">Book Now</a></button>
+  </div>
+
+</div>
+</div>
+</section>
+<section class="productCard" id="high">
+        
+  <h3><i class="bx bx-car"></i> Luxury Cars</h3>
+  <div class="card-container">
+
+
+
+    <div class="cards">
+
+      <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+        </div>
+        <img src="/luxury.png" alt="">
+
+      </div>
+      <h5>McLaren 720S</h5>
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>6.2k Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>9-10 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i>Model 2022 </span>
+          <span><i class="bx bx-target-lock"></i>Sports Car</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">$280,000 USD </div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+
+    </div>
+
+    <div class="cards">
+      <div class="image">
+        <img src="/new car1.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+        </div>
+      </div>
+
+      <h5>Mercedes-AMG GT</h5>
+
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>5.7k Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>5-7 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i>Model 2020</span>
+          <span><i class="bx bx-target-lock"></i>Parallel Hybrid</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">$115,000 USD </div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+
+    </div>
+    <div class="cards">
+      <div class="image">
+        <img src="/trending 1.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+        </div>
+      </div>
+
+      <h5>Lamborghini Huracán</h5>
+
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>7K Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>8-9 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i>Model 2023</span>
+          <span><i class="bx bx-target-lock"></i>Sports Car</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">$200,000 USD</div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+
+    </div>
+
+
+
+    <div class="cards">
+      <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+        </div>
+        <img src="/convertibles4.png" alt="">
+    
+      </div>
+      <h5> Mercedes-AMG GT 4-Door Coupe</h5>
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>14K Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>10-12 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i> Model 2020</span>
+          <span><i class="bx bx-target-lock"></i>  Sedan</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">$200,000 USD </div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+        </div>
+        <img src="/convertibles1.png" alt="">
+    
+      </div>
+      <h5>BMW M3</h5>
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>10K Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>7-9 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i> Model 2021</span>
+          <span><i class="bx bx-target-lock"></i>Sports Sedan</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">$200,000 USD </div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="image" onmouseover="showicon()" onmouseleave="hidecon()" id="imagePopup">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;" id="imagePopup"></i>
+        </div>
+        <img src="/market-image.png" alt="">
+    
+      </div>
+      <h5> Ford F-150 Tremor</h5>
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>8.6K Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>8-10 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i> Model 2021</span>
+          <span><i class="bx bx-target-lock"></i>PHEV</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost">  $65,000 USD</div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+    </div>
+    <div class="cards" id="show1">
+      <div class="image">
+        <img src="/newcar6.png" alt="" onmouseover="showicon()" onmouseleave="hidecon()">
+        <div class="circle-icon" id="circle-icon">
+          <i class='bx bx-heart' style="position: absolute; bottom: 70px;" id="heartIcon"
+            onclick="changeicon(this)"></i><br>
+          <i class='bx bx-plus' tyle="position: absolute; bottom: 10px;"></i>
+        </div>
+      </div>
+
+      <h5>Toyota QR</h5>
+
+      <div class="stars" style="display: flex;">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star-half"></i>
+        <span>6.9K Reviews</span>
+      </div>
+      <hr>
+      <div class="features">
+        <div class="feature1">
+          <span><i class="bx bx-error-circle"></i>Automatic</span>
+          <span><i class="bx bx-label"></i>6-8 km/l</span>
+        </div>
+        <div class="feature2">
+          <span><i class="bx bx-car"></i>Model 2019</span>
+          <span><i class="bx bx-target-lock"></i>SUV</span>
+        </div>
+      </div>
+      <div class="cost-book" style="display: grid; grid-template-columns: repeat(3,1fr); ">
+        <div class="cost"> $55,000 USD </div>
+        <button><a href="#">Book Now</a></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- 
+  - #FOOTER
+-->
+ 
+  <footer class="footer" style="position: relative; bottom: 50rem;">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/logo.png" width="300" height="63" alt="autofix home" style=" width: 20rem;">
+          </a>
+
+          <p class="footer-text">
+            "With a rich history in the automotive industry, we're your trusted partner on the road ahead."
+          </p>
+
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="p">Monday – Thursday</p>
+
+            <span class="span">10:00 am – 12:oo am</span>
+          </li>
+
+          <li>
+            <p class="p">Friday</p>
+
+            <span class="span">2:00 pm – 12:00 am</span>
+          </li>
+
+          <li>
+            <p class="p">Saturday – Sunday</p>
+
+            <span class="span">12.00 am– 1@:00 pm</span>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Contact Info</p>
+          </li>
+
+          <li>
+            <a href="tel:+01234567890" class="footer-link">
+              <span class="material-symbols-rounded">call</span>
+
+              <span class="span">+01 2 3456 7890</span>
+            </a>
+          </li>
+
+          <li>
+
+            <a href="mailto:support@carBreezy.com" class="footer-link">
+              <span class="material-symbols-rounded">mail</span>
+
+              <span class="span">support@carBreezy.com</span>
+            </a>
+          </li>
+
+          <li>
+            <address class="footer-link address">
+              <a href="https://www.google.com/maps/place/CarBreezy/@46.9389075,-122.6629661,8z/data=!4m6!3m5!1s0x60b546c346aeea3b:0xfeba1f271446d939!8m2!3d46.9389075!4d-122.6629661!16s%2Fg%2F11t5m3gtkp?entry=ttu"
+                class="footer-link">
+                <span class="material-symbols-rounded"
+                  style="font-size: 3.5rem;">location_on</span>
+
+                <span class="span">D-4, Block H, North Nazimabad, Karachi</span>
+              </a>
+            </address>
+          </li>
+          <ul class="social-list" style="position: relative; top: 1.5rem;">
+            <li style="position: relative; top: 1.3rem;">
+              <a href="#" class="social-link">
+                <img src="/facebook.svg" alt="facebook">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="/instagram.svg" alt="instagram">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="/twitter.svg" alt="twitter">
+              </a>
+            </li>
+
+          </ul>
+        </ul>
+
+      </div>
+
+
+
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+
+        <img src="./assets/images/footer-shape-2.png" width="778" height="1000" loading="lazy" alt="Shape"
+          class="shape shape-2">
+
+
+        <img src="/hi-removebg-preview.png" width="805" height="800" loading="lazy" alt="Red Car"
+          class="shape shape-1 move-anim" style="height: 64rem; position: absolute; bottom: 4rem;">
+   
+
+      </div>
+    </div>
+    <div class="ticker">
+
+      <p class="copyright"><span style="font-weight: bolder;">©</span> Copyright 2024 <span
+          style="font-weight: bolder;">|</span> Car Breezy <span style="font-weight: bolder;">|</span> All Rights
+        Reserved</p>
+
+      <div class="ticker-box">
+        <div class="ticker-content" id="tickerContent"></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+  <!-- 
+  - custom js link
+-->
+
+<script src="/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+
+     // JavaScript code for the counter
+     var counter = document.getElementById("counter");
+    if (localStorage.getItem("count")){
+        count=parseInt(localStorage.getItem("count"));
+    }else{
+        count=0;
+    }
+    function updateCounter(){
+     count++;
+     counter.textContent=count;
+     localStorage.setItem("count",count);
+    }
+    updateCounter();
+    
+    // JavaScript code for animated Text
+    const text=document.querySelector(".animated-text").children,
+    textLen=text.length;
+    let index=0;
+    const textInTimer=3000,
+    textOutTimer=2800;
+    
+    function animateText() {
+    for(let i=0; i<textLen; i++){
+    text[i].classList.remove("text-in","text-out");  
+    }
+    text[index].classList.add("text-in");
+    
+    setTimeout(function(){
+    text[index].classList.add("text-out");              
+    },textOutTimer)
+    
+    setTimeout(function(){
+    if(index == textLen-1){
+        index=0;
+    }
+    else{
+     index++;
+    }
+        animateText();
+    },textInTimer); 
+    }        
+    window.onload=animateText;
+    
+    // Toggle Search Bar
+    const searchToggle = document.querySelector('.searchBox');
+    searchToggle.addEventListener('click', () =>{
+        searchToggle.classList.toggle("active");
+    })
+       
+        const menu = document.querySelector('.nav-menu');
+    const openMenuBtn = document.querySelector('.open-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    
+    [openMenuBtn, closeMenuBtn].forEach((btn) => {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("open");
+            menu.style.transition = "transform 0.5s ease";
+        });
+    });
+    
+
+$(document).ready(function(){
+    $("#show1, #show2, #show3").hide(); // Initially hide the product card
+    $(".showMore").click(function(){
+      $("#show1, #show2, #show3").toggle();
+      scrolledThreshold = 5000;
+      var buttonText = $(this).text();
+      $(this).text(buttonText == "Show More" ? "Show Less" : "Show More");
+     
+    });
+  })
+$("#hatchback, #sedan, #suv,#convertible,#low, #medium,#high").hide();
+$("#hatchbackclick").click(function(){
+    $("#hatchback").show();
+    $("#toptrending , #sedan, #suv,#convertibles,#low, #medium,#high").hide();
+  });
+
+  $("#sedanclick").click(function(){
+    $("#sedan").show();
+    $("#toptrending , #hatchback, #suv, #convertibles,#low, #medium,#high").hide();
+  });
+  $("#suvclick").click(function(){
+    $("#suv").show();
+    $("#toptrending , #sedan, #hatchback, #convertible,#low, #medium,#high").hide();
+  })
+  $("#convertibleclick").click(function(){
+    $("#convertible").show();
+    $("#toptrending , #sedan, #suv, #hatchback,#low, #medium,#high").hide();
+  });
+  $("#clearfilters").click(function(){
+    $("#toptrending").show();
+    $("#convertible , #sedan, #suv, #hatchback,#low, #medium,#high").hide();
+  });
+  $("#lowclick").click(function(){
+    $("#low").show();
+    $("#convertible , #sedan, #suv, #hatchback,#toptrending, #medium,#high").hide();
+  });
+  $("#mediumclick").click(function(){
+    $("#medium").show();
+    $("#convertible , #sedan, #suv, #hatchback,#toptrending, #low,#high").hide();
+  });
+  $("#highclick").click(function(){
+    $("#high").show();
+    $("#convertible , #sedan, #suv, #hatchback,#toptrending, #medium,#hlow").hide();
+  });
+var scrolled100px = false;
+window.addEventListener('scroll', function() {
+    if (!scrolled100px && window.scrollY >= 980) {
+        // Your code to be executed when the window is scrolled by 100 pixels or more
+        document.getElementById("filterBox").style.display = "none";
+        // You can perform any action you want here
+
+        // Set the flag to true so that the function won't be executed again
+        scrolled100px = true;
+    } else if (scrolled100px && window.scrollY < 980) {
+        document.getElementById("filterBox").style.display = "block";
+        scrolled100px = false;
+    }
+    
+   
+});
+// Function to adjust the position of the filter based on scroll
+function adjustFilterPosition() {
+  var filter = document.getElementById('filterBox');
+  var headerHeight = 240; // Adjust this value according to your header height
+  
+
+  if (window.scrollY < headerHeight) {
+    filter.style.top = (headerHeight - window.scrollY) + 'px';
+  } else {
+    filter.style.top = '20px';
+  }
+}
+
+
+
+
+
+
+// Call adjustFilterPosition on scroll
+window.addEventListener('scroll', adjustFilterPosition);
+
+
+
+  
+
+document.addEventListener('DOMContentLoaded', function() {
+        // Get all anchor tags inside cards
+        const anchors = document.querySelectorAll('.cards a');
+        
+        console.log("Number of anchor tags found:", anchors.length); // Logging the number of anchor tags found
+        
+        // Loop through each anchor tag and update the href attribute
+        anchors.forEach(anchor => {
+            console.log("Updating href for:", anchor.textContent); // Logging the text content of the anchor tag
+            // Replace 'new_url_here' with your desired URL
+            anchor.setAttribute('href', '/bookingForm.html');
+            console.log("Updated href:", anchor.getAttribute('href')); // Logging the updated href attribute
+        });
+    });
+   
+
+
+    //Subscribing JS
+    document.getElementById("form").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const input = document.getElementById("input").value;
+      alert(`Hi ${input}!
+Scent N Stories wants to send notifications.`)
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+  <p>Thanks For Subscribing! </p>`;
+      result.classList.add("result")
+      let change = document.getElementById("form")
+      change.style.display = "none";
+      let formTittle = document.getElementById("formTittle");
+      formTittle.style.display = "none"
+    });
+
+    //JS For Continuous Scrolling Ticker
+    function getCurrentDateTime() {
+      const now = new Date();
+      return `${now.toLocaleDateString()} | ${now.toLocaleTimeString()}`;
+    }
+    // Function to get current location
+    function getCurrentLocation() {
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`)
+          .then(response => response.json())
+          .then(data => {
+            const address = data.display_name || 'Unknown Location';
+            document.getElementById('tickerContent').innerText = `${getCurrentDateTime()} | Location: D-4, Block H, North Nazimabad, Karachi`;
+          })
+          .catch(error => {
+            console.error('Error fetching location:', error);
+          });
+      }, error => {
+        console.error('Error fetching location:', error);
+      });
+    }
+
+
+    // Initial call to get current date, time, and location
+    getCurrentLocation();
+
+    // Update location every minute
+    setInterval(getCurrentLocation, 60000);
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
