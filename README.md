@@ -2,7 +2,7 @@
 <br>
 Car Selling Website
 <br>
-Author:
+Developer:
 Saba Naeem 
 
 
